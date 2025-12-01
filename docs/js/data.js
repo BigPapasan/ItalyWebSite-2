@@ -3,7 +3,7 @@ const tripData = [
         id: 'rome',
         name: 'Rome',
         imageName: 'images/rome_hero.png',
-        description: 'The Eternal City, home to ancient ruins, world-class art, and vibrant street life.',
+        description: '<a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>, the Eternal City, home to ancient ruins, world-class art, and vibrant street life.',
         dates: 'June 11–15',
         itinerary: [
             {
@@ -11,8 +11,8 @@ const tripData = [
                 date: 'June 11',
                 title: 'Arrival & Evening Stroll',
                 activities: [
-                    { title: 'Arrive in Rome / Check-in', description: 'Settle into your home base for the next 4 nights.' },
-                    { title: 'Evening Stroll', description: 'Walk to Piazza Navona & Trevi Fountain.', time: 'Evening' },
+                    { title: 'Arrive in Rome / Check-in', description: 'Settle into your Roman Hotel for your memorable 4 nights in <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>.' },
+                    { title: 'Evening Stroll', description: 'Walk to <a href="https://www.italia.it/en/lazio/rome/piazza-navona" target="_blank">Piazza Navona</a> & <a href="https://www.italia.it/en/lazio/rome/trevi-fountain" target="_blank">Trevi Fountain</a>.', time: 'Evening' },
                     { title: 'Gelato Stop', description: 'Gelateria del Teatro' },
                     { title: 'Dinner', description: 'Da Francesco (family friendly)' }
                 ]
@@ -22,9 +22,9 @@ const tripData = [
                 date: 'June 12',
                 title: 'Ancient Rome & City Highlights',
                 activities: [
-                    { title: 'Golf Cart Tour of Rome', description: 'See Colosseum exterior, Circus Maximus, Aventine Keyhole, Pantheon, Spanish Steps, Piazza Venezia. Family-friendly, minimal walking.', time: '3 hours' },
-                    { title: 'Lunch', description: 'Trastevere' },
-                    { title: 'Afternoon Exploration', description: 'Pantheon & Piazza Navona', time: 'Afternoon' },
+                    { title: 'Golf Cart Tour of Rome', description: 'See <a href="https://www.italia.it/en/lazio/rome/colosseum" target="_blank">Colosseum</a> exterior, <a href="https://www.italia.it/en/lazio/rome/roman-forum" target="_blank">Roman Forum</a>, <a href="https://www.italia.it/en/lazio/rome/pantheon" target="_blank">Pantheon</a>, <a href="https://www.italia.it/en/lazio/rome/piazza-di-spagna" target="_blank">Spanish Steps</a>, Piazza Venezia. Family-friendly, minimal walking.', time: '3 hours' },
+                    { title: 'Lunch', description: '<a href="https://www.italia.it/en/lazio/rome/trastevere" target="_blank">Trastevere</a>' },
+                    { title: 'Afternoon Exploration', description: '<a href="https://www.italia.it/en/lazio/rome/pantheon" target="_blank">Pantheon</a> & <a href="https://www.italia.it/en/lazio/rome/piazza-navona" target="_blank">Piazza Navona</a>', time: 'Afternoon' },
                     { title: 'Optional Rooftop Drink', description: 'Sunset at Terrazza Borromini', time: 'Sunset' }
                 ]
             },
@@ -34,8 +34,8 @@ const tripData = [
                 title: 'Day Trip to Pompeii',
                 activities: [
                     { title: 'Train to Naples', description: 'Rome Termini → Naples (~1 hr 10 min)', time: 'Morning' },
-                    { title: 'Transfer to Pompeii', description: '~35 min transfer' },
-                    { title: 'Guided Family Tour', description: 'Explore the ancient ruins of Pompeii.' },
+                    { title: 'Transfer to Pompeii', description: '~35 min transfer to <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a>' },
+                    { title: 'Guided Family Tour', description: 'Explore the ancient ruins of <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a>.' },
                     { title: 'Lunch', description: 'Caupona Pompeii' },
                     { title: 'Return to Rome', description: 'Dinner & rest', time: 'Evening' }
                 ]
@@ -45,11 +45,11 @@ const tripData = [
                 date: 'June 14',
                 title: 'Vatican & Villa Borghese',
                 activities: [
-                    { title: 'Vatican Museums', description: 'Sistine Chapel & St. Peter’s Basilica.', time: 'Morning' },
+                    { title: 'Vatican Museums', description: '<a href="https://www.italia.it/en/lazio/rome/cappella-sistina" target="_blank">Sistine Chapel</a> & <a href="https://www.italia.it/en/lazio/rome/st-peter-basilica" target="_blank">St. Peter’s Basilica</a>.', time: 'Morning' },
                     { title: 'Lunch', description: 'Ginger Sapori e Salute (near Vatican)' },
-                    { title: 'Villa Borghese Gardens', description: 'Playground & row boats.', time: 'Afternoon' },
-                    { title: 'Optional Gallery', description: 'Borghese Gallery timed tickets' },
-                    { title: 'Evening in Trastevere', description: 'Explore & casual dinner', time: 'Evening' }
+                    { title: 'Villa Borghese Gardens', description: '<a href="https://www.italia.it/en/lazio/rome/villa-borghese" target="_blank">Villa Borghese</a> - Playground & row boats.', time: 'Afternoon' },
+                    { title: 'Optional Gallery', description: '<a href="https://www.italia.it/en/lazio/rome/borghese-gallery" target="_blank">Borghese Gallery</a> timed tickets' },
+                    { title: 'Evening in Trastevere', description: 'Explore <a href="https://www.italia.it/en/lazio/rome/trastevere" target="_blank">Trastevere</a> & casual dinner', time: 'Evening' }
                 ]
             }
         ]
