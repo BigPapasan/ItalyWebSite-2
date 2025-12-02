@@ -58,7 +58,7 @@ const tripData = [
         id: 'florence',
         name: 'Florence',
         imageName: 'images/florence_hero.png',
-        description: 'The Cradle of the Renaissance, famous for its art, architecture, and Tuscan cuisine.',
+        description: 'The Cradle of the Renaissance, famous for its art, architecture, and Tuscan cuisine. <a href="https://www.italia.it/en/tuscany/florence" target="_blank">Florence Guide</a>',
         dates: 'June 15–19',
         itinerary: [
             {
@@ -66,10 +66,10 @@ const tripData = [
                 date: 'June 15',
                 title: 'Arrival & Ponte Vecchio',
                 activities: [
-                    { title: 'Travel to Florence', description: 'Fast train Rome → Florence (1 hr 30 min)', time: 'Morning' },
+                    { title: 'Travel to Florence', description: 'Fast train Rome → <a href="https://www.italia.it/en/tuscany/florence" target="_blank">Florence</a> (1 hr 30 min)', time: 'Morning' },
                     { title: 'Check-in', description: 'Home base for 4 nights.' },
-                    { title: 'Evening Walk', description: 'Ponte Vecchio', time: 'Evening' },
-                    { title: 'Dinner', description: 'La Giostra' }
+                    { title: 'Evening Walk', description: '<a href="https://www.italia.it/en/tuscany/florence/ponte-vecchio" target="_blank">Ponte Vecchio</a>', time: 'Evening' },
+                    { title: 'Dinner', description: '<a href="https://ristorantelagiostra.com/en/ristorante-la-giostra/" target="_blank">La Giostra</a>' }
                 ]
             },
             {
@@ -78,8 +78,8 @@ const tripData = [
                 title: 'Gelato & City Views',
                 activities: [
                     { title: 'Family Gelato Making Class', description: 'Includes making sorbet + Italian gelato tasting.' },
-                    { title: 'Explore Florence', description: 'Duomo (book climb if desired), Piazza della Signoria.', time: 'Afternoon' },
-                    { title: 'Sunset', description: 'Piazzale Michelangelo', time: 'Sunset' }
+                    { title: 'Explore Florence', description: '<a href="https://www.italia.it/en/tuscany/florence/duomo-florence" target="_blank">Duomo</a> (book climb if desired), <a href="https://www.italia.it/en/tuscany/florence/piazza-della-signoria" target="_blank">Piazza della Signoria</a>.', time: 'Afternoon' },
+                    { title: 'Sunset', description: '<a href="https://www.italia.it/en/tuscany/florence/piazzale-michelangelo" target="_blank">Piazzale Michelangelo</a>', time: 'Sunset' }
                 ]
             },
             {
@@ -87,8 +87,8 @@ const tripData = [
                 date: 'June 17',
                 title: 'Tuscany Balloon Ride',
                 activities: [
-                    { title: 'Hot Air Balloon Ride', description: 'Over Tuscany (near San Casciano or Chianti). Champagne breakfast included.', time: 'Early Morning' },
-                    { title: 'Relaxation', description: 'Pool time or Boboli Gardens.', time: 'Afternoon' }
+                    { title: 'Hot Air Balloon Ride', description: 'Over <a href="https://www.italia.it/en/tuscany" target="_blank">Tuscany</a> (near <a href="https://www.italia.it/en/tuscany/florence/san-casciano-val-di-pesa" target="_blank">San Casciano</a> or <a href="https://www.italia.it/en/tuscany/chianti" target="_blank">Chianti</a>). Champagne breakfast included.', time: 'Early Morning' },
+                    { title: 'Relaxation', description: 'Pool time or <a href="https://www.italia.it/en/tuscany/florence/boboli-gardens" target="_blank">Boboli Gardens</a>.', time: 'Afternoon' }
                 ]
             },
             {
@@ -96,9 +96,9 @@ const tripData = [
                 date: 'June 18',
                 title: 'Day Trip to Modena',
                 activities: [
-                    { title: 'Train to Modena', description: 'Visit Ferrari Museum Maranello or Enzo Ferrari Museum.' },
+                    { title: 'Train to Modena', description: 'Visit <a href="https://www.italia.it/en/emilia-romagna/modena/museo-ferrari-maranello" target="_blank">Ferrari Museum Maranello</a> or <a href="https://www.italia.it/en/emilia-romagna/modena/ferrari-museum" target="_blank">Enzo Ferrari Museum</a>.' },
                     { title: 'Experience', description: 'Optional driving simulator.' },
-                    { title: 'Lunch', description: 'Try Tigelle & Lambrusco in Modena.' },
+                    { title: 'Lunch', description: 'Try Tigelle & Lambrusco in <a href="https://www.italia.it/en/emilia-romagna/modena" target="_blank">Modena</a>.' },
                     { title: 'Return to Florence', description: 'Train back.' }
                 ]
             }
