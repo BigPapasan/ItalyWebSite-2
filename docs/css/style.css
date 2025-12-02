@@ -478,18 +478,6 @@ a {
     border-bottom-color: var(--color-primary);
 }
 
-/* Navigation */
-.back-button {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    z-index: 10;
-    padding: 12px 28px;
-    background: var(--color-white);
-    color: var(--color-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
@@ -556,13 +544,8 @@ a {
         padding: 10px 16px 24px 16px;
     }
 
-    .back-button {
-        top: 20px;
-        left: 20px;
-        padding: 8px 20px;
-        font-size: 0.75rem;
-    }
 }
+
 /* Persistent Header */
 .persistent-header {
     position: fixed;
@@ -598,5 +581,13 @@ a {
     .persistent-header {
         padding: 12px 16px;
         font-size: 0.7rem;
+        gap: 12px;
+    }
+
+    .persistent-header span:first-child {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 70%;
     }
 }

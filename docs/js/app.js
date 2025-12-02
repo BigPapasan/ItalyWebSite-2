@@ -49,12 +49,11 @@ function renderLocation(locationId) {
 
   app.innerHTML = `
     <div class="persistent-header">
-      <span>${location.name}</span>
+      <span onclick="navigateTo('')" style="cursor: pointer;">← ${location.name}</span>
       <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
     </div>
     <div class="hero">
       <div class="hero-bg" style="background-image: url('${location.imageName}')"></div>
-      <a onclick="navigateTo('')" class="back-button">← Back</a>
       <div class="hero-content">
         <h1 class="hero-title">${location.name}</h1>
         <p class="hero-subtitle">${location.dates}</p>
