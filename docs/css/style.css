@@ -563,3 +563,40 @@ a {
         font-size: 0.75rem;
     }
 }
+/* Persistent Header */
+.persistent-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: var(--color-white);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.persistent-header:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .persistent-header {
+        padding: 16px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .persistent-header {
+        padding: 12px 16px;
+        font-size: 0.7rem;
+    }
+}

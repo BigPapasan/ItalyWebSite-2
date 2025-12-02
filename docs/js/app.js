@@ -4,6 +4,10 @@ const app = document.getElementById('app');
 
 function renderHome() {
   app.innerHTML = `
+    <div class="persistent-header">
+      <span>Italy Trip</span>
+      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+    </div>
     <div class="hero">
       <div class="hero-bg" style="background-image: url('images/italy_hero.png')"></div>
       <div class="hero-content">
@@ -44,6 +48,10 @@ function renderLocation(locationId) {
   }
 
   app.innerHTML = `
+    <div class="persistent-header">
+      <span>${location.name}</span>
+      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+    </div>
     <div class="hero">
       <div class="hero-bg" style="background-image: url('${location.imageName}')"></div>
       <a onclick="navigateTo('')" class="back-button">← Back</a>
