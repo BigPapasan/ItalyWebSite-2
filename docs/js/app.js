@@ -22,11 +22,15 @@ function renderHome() {
         <div class="arrow">↓</div>
       </div>
     </div>
-    <div class="container">
-      <h2 class="reveal" style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">Your Destinations</h2>
-      <div class="grid">
+    <div class="container" style="position: relative; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h2 class="reveal" style="text-align: center; margin-bottom: 10px; font-size: 2.5rem;">Your Destinations</h2>
+      <button id="home-prev-btn" class="nav-corner-btn prev" onclick="scrollHomeCarousel(-1)" style="display: none;">
+        ← Back
+      </button>
+      
+      <div class="location-carousel" onscroll="updateHomeNavButtons()">
         ${tripData.map((location, index) => `
-          <div class="card reveal" style="transition-delay: ${index * 100}ms" onclick="navigateTo('${location.id}')">
+          <div class="location-card reveal" style="transition-delay: ${index * 100}ms" onclick="navigateTo('${location.id}')">
             <div class="card-image-wrapper">
               <img src="${location.imageName}" alt="${location.name}" class="card-image">
             </div>
@@ -37,11 +41,51 @@ function renderHome() {
           </div>
         `).join('')}
       </div>
+
+      <button id="home-next-btn" class="nav-corner-btn next" onclick="scrollHomeCarousel(1)">
+        More →
+      </button>
     </div>
   `;
 
   initAnimations();
+  // Initialize button state
+  setTimeout(updateHomeNavButtons, 100);
 }
+
+window.scrollHomeCarousel = function (direction) {
+  const carousel = document.querySelector('.location-carousel');
+  if (carousel) {
+    const scrollAmount = carousel.offsetWidth;
+    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    // Button visibility update happens via onscroll event
+  }
+};
+
+window.updateHomeNavButtons = function () {
+  const carousel = document.querySelector('.location-carousel');
+  const prevBtn = document.getElementById('home-prev-btn');
+  const nextBtn = document.getElementById('home-next-btn');
+
+  if (!carousel || !prevBtn || !nextBtn) return;
+
+  const scrollLeft = carousel.scrollLeft;
+  const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+  // Show/Hide Prev Button
+  if (scrollLeft > 20) {
+    prevBtn.style.display = 'flex';
+  } else {
+    prevBtn.style.display = 'none';
+  }
+
+  // Show/Hide Next Button
+  if (scrollLeft >= maxScrollLeft - 20) {
+    nextBtn.style.display = 'none';
+  } else {
+    nextBtn.style.display = 'flex';
+  }
+};
 
 function renderLocation(locationId) {
   const location = tripData.find(l => l.id === locationId);
