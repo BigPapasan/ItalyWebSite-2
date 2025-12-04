@@ -6,7 +6,10 @@ function renderHome() {
   app.innerHTML = `
     <div class="persistent-header">
       <span>Italy Trip</span>
-      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer;">Lingua Italiana</span>
+        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+      </div>
     </div>
     <div class="hero">
       <div class="hero-bg" style="background-image: url('images/italy_hero.png')"></div>
@@ -50,7 +53,10 @@ function renderLocation(locationId) {
   app.innerHTML = `
     <div class="persistent-header">
       <span onclick="navigateTo('')" style="cursor: pointer;">← ${location.name}</span>
-      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer;">Lingua Italiana</span>
+        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+      </div>
     </div>
     <div class="hero">
       <div class="hero-bg" style="background-image: url('${location.imageName}')"></div>
@@ -111,6 +117,54 @@ function renderLocation(locationId) {
 
 // --- Logic ---
 
+function renderLinguaItaliana() {
+  app.innerHTML = `
+    <div class="persistent-header">
+      <span onclick="navigateTo('')" style="cursor: pointer;">← Back</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer; font-weight: 700;">Lingua Italiana</span>
+        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+      </div>
+    </div>
+    <div class="hero" style="min-height: 400px;">
+      <div class="hero-bg" style="background-image: url('images/italy_hero.png')"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">${phrasesData.title}</h1>
+        <p class="hero-subtitle">Essential Phrases</p>
+      </div>
+    </div>
+    <div class="container" style="position: relative;">
+      <button class="carousel-nav-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
+      <div class="phrase-carousel">
+        ${phrasesData.sections.map((section, index) => `
+          <div class="phrase-card reveal" style="transition-delay: ${index * 100}ms">
+            <h3 class="phrase-section-title">${section.name}</h3>
+            <div class="phrase-list">
+              ${section.phrases.map(phrase => `
+                <div class="phrase-item">
+                  <span class="phrase-italian">${phrase.italian}</span>
+                  <span class="phrase-english">${phrase.english}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      <button class="carousel-nav-btn next" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+  `;
+
+  initAnimations();
+}
+
+window.scrollCarousel = function (direction) {
+  const carousel = document.querySelector('.phrase-carousel');
+  if (carousel) {
+    const scrollAmount = carousel.offsetWidth;
+    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+};
+
 function navigateTo(route) {
   window.location.hash = route;
   window.scrollTo(0, 0);
@@ -118,7 +172,9 @@ function navigateTo(route) {
 
 function handleRoute() {
   const hash = window.location.hash.substring(1);
-  if (hash) {
+  if (hash === 'lingua-italiana') {
+    renderLinguaItaliana();
+  } else if (hash) {
     renderLocation(hash);
   } else {
     renderHome();

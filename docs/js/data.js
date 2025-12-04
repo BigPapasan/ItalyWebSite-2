@@ -1,20 +1,20 @@
-const tripData = [
+﻿const tripData = [
     {
         id: 'rome',
         name: 'Rome',
         imageName: 'images/rome_hero.png',
-        description: '<a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>, the Eternal City, home to ancient ruins, world-class art, and vibrant street life.',
+        description: 'The Eternal City, where ancient history meets modern life. <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>',
         dates: 'June 11–15',
         itinerary: [
             {
                 dayNumber: 1,
                 date: 'June 11',
-                title: 'Arrival & Evening Stroll',
+                title: 'Arrival & Welcome',
                 activities: [
-                    { title: 'Arrive in Rome / Check-in', description: 'Settle into your Roman Hotel for your memorable 4 nights in <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>.' },
-                    { title: 'Evening Stroll', description: 'Walk to <a href="https://www.italia.it/en/lazio/rome/piazza-navona" target="_blank">Piazza Navona</a> & <a href="https://www.italia.it/en/lazio/rome/trevi-fountain" target="_blank">Trevi Fountain</a>.', time: 'Evening' },
-                    { title: 'Gelato Stop', description: 'Gelateria del Teatro' },
-                    { title: 'Dinner', description: 'Da Francesco (family friendly)' }
+                    { title: 'Arrive in Rome', description: 'Private transfer to hotel.' },
+                    { title: 'Check-in', description: 'Settle into your Roman Hotel for your memorable 4 nights in <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>.' },
+                    { title: 'Evening Walk', description: '<a href="https://www.italia.it/en/lazio/rome/piazza-navona" target="_blank">Piazza Navona</a> & <a href="https://www.italia.it/en/lazio/rome/trevi-fountain" target="_blank">Trevi Fountain</a>.', time: 'Evening' },
+                    { title: 'Welcome Dinner', description: 'Authentic Roman pizza.' }
                 ]
             },
             {
@@ -31,13 +31,12 @@ const tripData = [
             {
                 dayNumber: 3,
                 date: 'June 13',
-                title: 'Day Trip to Pompeii',
+                title: 'Pompeii Day Trip',
                 activities: [
-                    { title: 'Train to Naples', description: 'Rome Termini → Naples (~1 hr 10 min)', time: 'Morning' },
-                    { title: 'Transfer to Pompeii', description: '~35 min transfer to <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a>' },
-                    { title: 'Guided Family Tour', description: 'Explore the ancient ruins of <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a>.' },
-                    { title: 'Lunch', description: 'Caupona Pompeii' },
-                    { title: 'Return to Rome', description: 'Dinner & rest', time: 'Evening' }
+                    { title: 'Transfer to Pompeii', description: 'Private driver (~2.5 hrs) to <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a>.' },
+                    { title: 'Guided Family Tour', description: '2-hour kid-friendly tour of <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a> highlights.', time: '11:00 AM' },
+                    { title: 'Lunch', description: 'Authentic Neapolitan Pizza nearby.' },
+                    { title: 'Return to Rome', description: 'Relaxing drive back.' }
                 ]
             },
             {
@@ -118,27 +117,27 @@ const tripData = [
                 activities: [
                     { title: 'Travel to Cinque Terre', description: 'Train Florence → La Spezia (~2 hr), then local train.' },
                     { title: 'Check-in', description: 'Monterosso recommended for families.' },
-                    { title: 'Relax', description: 'Beach time.', time: 'Afternoon' },
-                    { title: 'Dinner', description: 'Sunset dinner on the water in Monterosso.', time: 'Sunset' }
+                    { title: 'Dinner', description: 'Seafood with sea view.', time: 'Evening' }
                 ]
             },
             {
                 dayNumber: 2,
                 date: 'June 20',
-                title: 'Cooking Class & Vernazza',
+                title: 'Boat Tour & Swimming',
                 activities: [
-                    { title: 'Family Cooking Class', description: 'Pesto-making authentic Ligurian style + seafood or pasta course.' },
-                    { title: 'Afternoon', description: 'Beach or ferry ride to Vernazza.', time: 'Afternoon' }
+                    { title: 'Private Boat Tour', description: 'View the 5 villages from the sea.', time: 'Morning' },
+                    { title: 'Lunch', description: 'Focaccia & Pesto in Vernazza.' },
+                    { title: 'Beach Time', description: 'Relax at Monterosso beach.', time: 'Afternoon' }
                 ]
             },
             {
                 dayNumber: 3,
                 date: 'June 21',
-                title: 'Boat Tour & Coastal Views',
+                title: 'Hiking & Pesto Class',
                 activities: [
-                    { title: 'Boat Tour', description: 'Cinque Terre Boat Tour / Swimming Coves.' },
-                    { title: 'Explore', description: 'Vernazza & Manarola by ferry.' },
-                    { title: 'Optional Walk', description: 'Manarola to Riomaggiore (Via dell’Amore) if open.' }
+                    { title: 'Morning Hike', description: 'Short scenic trail (e.g., Vernazza to Corniglia) or walk Via dell’Amore (if open).', time: 'Morning' },
+                    { title: 'Pesto Making Class', description: 'Learn to make authentic Ligurian pesto.' },
+                    { title: 'Farewell Dinner', description: 'Sunset aperitivo.' }
                 ]
             }
         ]
@@ -147,40 +146,131 @@ const tripData = [
         id: 'venice',
         name: 'Venice',
         imageName: 'images/venice_hero.png',
-        description: 'The City of Canals, built on more than 100 small islands in a lagoon in the Adriatic Sea.',
-        dates: 'June 22–24',
+        description: 'The City of Canals, offering a magical, floating atmosphere unlike anywhere else.',
+        dates: 'June 22–25',
         itinerary: [
             {
                 dayNumber: 1,
                 date: 'June 22',
                 title: 'Arrival & Gondola Ride',
                 activities: [
-                    { title: 'Travel to Venice', description: 'Train La Spezia → Venice (~5 hrs, 1–2 transfers).' },
-                    { title: 'Arrival', description: 'Vaporetto to hotel.' },
-                    { title: 'Gondola Ride', description: 'Sunset ride.', time: '7-8pm' },
-                    { title: 'Dinner', description: 'Cannaregio district.' }
+                    { title: 'Travel to Venice', description: 'Train La Spezia → Venice (~4-5 hrs).' },
+                    { title: 'Water Taxi', description: 'Private boat to hotel (grand entrance!).' },
+                    { title: 'Gondola Ride', description: 'Classic canal experience.', time: 'Sunset' },
+                    { title: 'Dinner', description: 'Cicchetti (Venetian tapas).' }
                 ]
             },
             {
                 dayNumber: 2,
                 date: 'June 23',
-                title: 'St. Mark\'s & Glass Making',
+                title: 'St. Mark’s & Murano',
                 activities: [
-                    { title: 'Sightseeing', description: 'St. Mark’s Basilica & Doge’s Palace.' },
-                    { title: 'Walk', description: 'Bridge of Sighs & Rialto Market.' },
-                    { title: 'Optional Workshop', description: 'Murano glass workshop or Burano colorful village boat.' },
-                    { title: 'Evening', description: 'Dinner canalside & gelato night walk.', time: 'Evening' }
+                    { title: 'St. Mark’s Basilica', description: 'Skip-the-line tour.', time: 'Morning' },
+                    { title: 'Doge’s Palace', description: 'Secret Itineraries tour (great for kids).' },
+                    { title: 'Boat to Murano', description: 'See glass blowing demonstration.', time: 'Afternoon' }
                 ]
             },
             {
                 dayNumber: 3,
                 date: 'June 24',
+                title: 'Mask Making & Farewell',
+                activities: [
+                    { title: 'Carnival Mask Workshop', description: 'Paint your own Venetian mask.', time: 'Morning' },
+                    { title: 'Free Time', description: 'Get lost in the calli (streets), shop for souvenirs.' },
+                    { title: 'Farewell Dinner', description: 'Grand Canal view restaurant.', time: 'Evening' }
+                ]
+            },
+            {
+                dayNumber: 4,
+                date: 'June 25',
                 title: 'Departure',
                 activities: [
-                    { title: 'Breakfast', description: 'Last shopping.', time: 'Morning' },
-                    { title: 'Depart Venice', description: 'Safe travels!' }
+                    { title: 'Airport Transfer', description: 'Water taxi to Marco Polo Airport.' },
+                    { title: 'Flight Home', description: 'Arrivederci Italia!' }
                 ]
             }
         ]
     }
 ];
+
+const phrasesData = {
+    title: 'Italian Travel Phrases Guide',
+    sections: [
+        {
+            name: 'General Survival',
+            phrases: [
+                { italian: 'Ciao / Buongiorno / Buonasera', english: 'Hello / Good morning / Good evening' },
+                { italian: 'Come stai? / Come sta?', english: 'How are you? (informal / formal)' },
+                { italian: 'Sto bene, grazie.', english: 'I’m good, thank you.' },
+                { italian: 'Mi chiamo…', english: 'My name is…' },
+                { italian: 'Piacere!', english: 'Nice to meet you.' },
+                { italian: 'Dov’è…?', english: 'Where is…?' },
+                { italian: 'Dov’è il bagno?', english: 'Where is the bathroom?' },
+                { italian: 'Quanto tempo ci vuole?', english: 'How long does it take?' },
+                { italian: 'È lontano?', english: 'Is it far?' },
+                { italian: 'Capisco / Non capisco', english: 'I understand / I don’t understand' },
+                { italian: 'Parla inglese?', english: 'Do you speak English?' },
+                { italian: 'Va bene.', english: 'Okay' },
+                { italian: 'Non importa.', english: 'Never mind' },
+                { italian: 'Perfetto!', english: 'Perfect' },
+                { italian: 'Mi dispiace.', english: 'I’m sorry' },
+                { italian: 'Ho bisogno di aiuto.', english: 'I need help' }
+            ]
+        },
+        {
+            name: 'Airport & Train Station',
+            phrases: [
+                { italian: 'Biglietteria', english: 'Ticket office' },
+                { italian: 'Binario', english: 'Platform' },
+                { italian: 'Orario', english: 'Schedule' },
+                { italian: 'Uscita', english: 'Exit' },
+                { italian: 'Dov’è il binario numero…?', english: 'Where is platform number…?' },
+                { italian: 'A che ora parte il treno per…?', english: 'What time does the train leave?' },
+                { italian: 'È in ritardo?', english: 'Is it delayed?' },
+                { italian: 'Ho bisogno di un taxi.', english: 'I need a taxi.' }
+            ]
+        },
+        {
+            name: 'Hotel Check-In & Check-Out',
+            phrases: [
+                { italian: 'Ho una prenotazione.', english: 'I have a reservation.' },
+                { italian: 'Vorrei fare il check-in.', english: 'I would like to check in.' },
+                { italian: 'A che ora è il check-out?', english: 'What time is check-out?' },
+                { italian: 'C’è la colazione inclusa?', english: 'Is breakfast included?' },
+                { italian: 'Potrei avere un’altra chiave?', english: 'Can I have another key?' },
+                { italian: 'Il Wi-Fi funziona?', english: 'Does the Wi-Fi work?' }
+            ]
+        },
+        {
+            name: 'Restaurant & Café',
+            phrases: [
+                { italian: 'Un tavolo per due, per favore.', english: 'A table for two, please.' },
+                { italian: 'Possiamo vedere il menù?', english: 'Can we see the menu?' },
+                { italian: 'Senza… (glutine / latte / noci)', english: 'Without… (gluten/milk/nuts)' },
+                { italian: 'Che cosa consiglia?', english: 'What do you recommend?' },
+                { italian: 'Il conto, per favore.', english: 'The check, please.' }
+            ]
+        },
+        {
+            name: 'Shopping & Everyday',
+            phrases: [
+                { italian: 'Quanto costa?', english: 'How much does it cost?' },
+                { italian: 'Posso pagare con carta?', english: 'Can I pay with card?' },
+                { italian: 'Dove posso trovare…?', english: 'Where can I find…?' },
+                { italian: 'Mi scusi. / Permesso.', english: 'Excuse me / Coming through.' }
+            ]
+        },
+        {
+            name: 'Pronunciation of Famous Places',
+            phrases: [
+                { italian: 'Roma', english: 'ROH-mah (Rome)' },
+                { italian: 'Firenze', english: 'fee-REN-tseh (Florence)' },
+                { italian: 'Venezia', english: 'veh-NEH-tsya (Venice)' },
+                { italian: 'Milano', english: 'mee-LAH-no (Milan)' },
+                { italian: 'Cinque Terre', english: 'CHEEN-kweh TEH-reh (Five Lands)' },
+                { italian: 'Positano', english: 'po-zee-TAH-no (Amalfi Coast)' },
+                { italian: 'Capri', english: 'KAH-pree' }
+            ]
+        }
+    ]
+};
