@@ -5,10 +5,10 @@ const app = document.getElementById('app');
 function renderHome() {
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('map')" style="cursor: pointer;">Italia</span>
+      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
       <div style="display: flex; gap: 20px;">
         <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer;">Lingua Italiana</span>
-        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+        <span onclick="navigateTo('map')" style="cursor: pointer;">La mappa</span>
       </div>
     </div>
     <div class="hero">
@@ -67,6 +67,12 @@ function renderHome() {
         `).join('')}
       </div>
 
+      <div class="carousel-indicators" style="display: flex; justify-content: center; gap: 8px; margin-top: 8px;">
+        ${tripData.map((_, index) => `
+          <div class="indicator-dot ${index === 0 ? 'active' : ''}" data-index="${index}" style="width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.2); transition: all 0.3s ease;"></div>
+        `).join('')}
+      </div>
+
       <button id="home-next-btn" class="nav-corner-btn next" onclick="scrollHomeCarousel(1)">
         More →
       </button>
@@ -93,11 +99,27 @@ window.updateHomeNavButtons = function () {
   const carousel = document.querySelector('.location-carousel');
   const prevBtn = document.getElementById('home-prev-btn');
   const nextBtn = document.getElementById('home-next-btn');
+  const indicators = document.querySelectorAll('.indicator-dot');
 
   if (!carousel || !prevBtn || !nextBtn) return;
 
   const scrollLeft = carousel.scrollLeft;
   const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+  const cardWidth = carousel.querySelector('.location-card').offsetWidth + 40; // width + gap
+  const activeIndex = Math.round(scrollLeft / cardWidth);
+
+  // Update Indicators
+  indicators.forEach((dot, index) => {
+    if (index === activeIndex) {
+      dot.classList.add('active');
+      dot.style.background = 'var(--color-primary)';
+      dot.style.transform = 'scale(1.2)';
+    } else {
+      dot.classList.remove('active');
+      dot.style.background = 'rgba(0,0,0,0.2)';
+      dot.style.transform = 'scale(1)';
+    }
+  });
 
   // Show/Hide Prev Button
   if (scrollLeft > 20) {
@@ -143,10 +165,10 @@ function renderLocation(locationId) {
 
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('map')" style="cursor: pointer;">Italia</span>
+      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
       <div style="display: flex; gap: 20px;">
         <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer;">Lingua Italiana</span>
-        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+        <span onclick="navigateTo('map')" style="cursor: pointer;">La mappa</span>
       </div>
     </div>
     <div class="hero location-hero">
@@ -159,6 +181,11 @@ function renderLocation(locationId) {
     </div>
     <div class="container itinerary-container">
       ${itineraryHtml}
+      <div class="reveal" style="text-align: center; margin-top: 40px;">
+        <button class="nav-corner-btn" onclick="navigateTo('')" style="position: relative; display: inline-flex; bottom: auto; left: auto; right: auto; transform: none; margin: 0; background: var(--color-primary); color: white;">
+          ← Back to Home
+        </button>
+      </div>
     </div>
   `;
 
@@ -177,10 +204,10 @@ window.scrollCarousel = function (direction) {
 function renderMap() {
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('map')" style="cursor: pointer; font-weight: 700;">Italia</span>
+      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
       <div style="display: flex; gap: 20px;">
         <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer;">Lingua Italiana</span>
-        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+        <span onclick="navigateTo('map')" style="cursor: pointer; font-weight: 700;">La mappa</span>
       </div>
     </div>
     <div class="hero" style="min-height: 400px;">
@@ -235,18 +262,10 @@ function renderMap() {
             </g>
           </svg>
         </div>
-        <div class="map-legend reveal">
-          <h3 style="margin-bottom: 20px; color: var(--color-secondary);">Your Journey</h3>
-          <div style="display: flex; flex-direction: column; gap: 12px;">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--color-primary); border: 2px solid white;"></div>
-              <span>City Destinations - Click to explore</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <div style="width: 40px; height: 3px; background: var(--color-primary); opacity: 0.8;"></div>
-              <span>Travel Route</span>
-            </div>
-          </div>
+        <div class="reveal" style="text-align: center; margin-top: 40px;">
+          <button class="nav-corner-btn" onclick="navigateTo('')" style="position: relative; display: inline-flex; bottom: auto; left: auto; right: auto; transform: none; margin: 0; background: var(--color-primary); color: white;">
+            ← Back to Home
+          </button>
         </div>
       </div>
     </div>
@@ -262,10 +281,10 @@ function navigateTo(route) {
 
 function handleRoute() {
   const hash = window.location.hash.substring(1);
-  if (hash === 'lingua-italiana') {
-    renderLinguaItaliana();
-  } else if (hash === 'map') {
+  if (hash === 'map') {
     renderMap();
+  } else if (hash === 'lingua-italiana') {
+    renderLanguage();
   } else if (hash.startsWith('activity/')) {
     const detailId = hash.split('/')[1];
     renderActivityDetail(detailId);
@@ -274,6 +293,50 @@ function handleRoute() {
   } else {
     renderHome();
   }
+}
+
+function renderLanguage() {
+  app.innerHTML = `
+    <div class="persistent-header">
+      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer; font-weight: 700;">Lingua Italiana</span>
+        <span onclick="navigateTo('map')" style="cursor: pointer;">La mappa</span>
+      </div>
+    </div>
+    <div class="hero" style="min-height: 400px;">
+      <div class="hero-bg" style="background-image: url('images/italy_hero.png')"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Lingua Italiana</h1>
+        <p class="hero-subtitle">Speak like a local</p>
+      </div>
+    </div>
+    <div class="container" style="padding-top: 40px; padding-bottom: 60px;">
+      <div class="itinerary-container">
+        ${languageData.map(category => `
+          <div class="day-group reveal">
+            <h2 style="color: var(--color-primary); margin-bottom: 20px; font-family: var(--font-heading);">${category.category}</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+              ${category.phrases.map(phrase => `
+                <div style="background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--color-secondary);">
+                  <p style="font-size: 1.4rem; font-weight: 700; color: #333; margin-bottom: 5px;">${phrase.italian}</p>
+                  <p style="font-size: 1rem; color: #666; font-style: italic;">${phrase.english}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+      
+      <div class="reveal" style="text-align: center; margin-top: 40px;">
+        <button class="nav-corner-btn" onclick="navigateTo('')" style="position: relative; display: inline-flex; bottom: auto; left: auto; right: auto; transform: none; margin: 0; background: var(--color-primary); color: white;">
+          ← Back to Home
+        </button>
+      </div>
+    </div>
+  `;
+
+  initAnimations();
 }
 
 function renderActivityDetail(detailId) {
@@ -300,10 +363,10 @@ function renderActivityDetail(detailId) {
 
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('map')" style="cursor: pointer;">Italia</span>
+      <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
       <div style="display: flex; gap: 20px;">
         <span onclick="navigateTo('${foundLocation.id}')" style="cursor: pointer;">Back to ${foundLocation.name}</span>
-        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+        <span onclick="navigateTo('map')" style="cursor: pointer;">La mappa</span>
       </div>
     </div>
     <div class="hero" style="min-height: 50vh;">
@@ -328,6 +391,12 @@ function renderActivityDetail(detailId) {
               `).join('')}
             </div>
           ` : '<p>More detailed information about this activity will appear here.</p>'}
+        </div>
+
+        <div class="reveal" style="text-align: center; margin-top: 40px;">
+          <button class="nav-corner-btn" onclick="navigateTo('${foundLocation.id}')" style="position: relative; display: inline-flex; bottom: auto; left: auto; right: auto; transform: none; margin: 0; background: var(--color-primary); color: white;">
+            ← Back to ${foundLocation.name}
+          </button>
         </div>
       </div>
     </div>

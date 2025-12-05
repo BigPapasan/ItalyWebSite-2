@@ -13,11 +13,12 @@
                 activities: [
                     {
                         title: 'Arrive in Rome',
-                        description: 'Private transfer to hotel. Check into <a href="https://www.hotelvillapamphiliroma.com/en-GB" target="_blank">Hotel Villa Pamphili</a> for your memorable 4 nights in <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>.',
+                        description: '',
                         image: 'images/rome_hero.png',
                         detailId: 'rome-arrival',
                         details: [
-                            { title: 'Check-in', description: 'Settle into <a href="https://www.hotelvillapamphiliroma.com/en-GB" target="_blank">Hotel Villa Pamphili</a> for your memorable 4 nights in <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>.' },
+                            { title: 'Private Transfer', description: 'Private transfer to hotel.' },
+                            { title: 'Check-in', description: 'Check into <a href="https://www.hotelvillapamphiliroma.com/en-GB" target="_blank">Hotel Villa Pamphili</a> for your memorable 4 nights in <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>.' },
                             { title: 'Evening Walk', description: '<a href="https://www.italia.it/en/lazio/rome/piazza-navona" target="_blank">Piazza Navona</a> & <a href="https://www.italia.it/en/lazio/rome/trevi-fountain" target="_blank">Trevi Fountain</a>.', time: 'Evening' },
                             { title: 'Welcome Dinner', description: 'Authentic Roman pizza.' }
                         ]
@@ -31,7 +32,7 @@
                 activities: [
                     {
                         title: 'Ancient Rome & City Highlights',
-                        description: 'Golf Cart Tour covering Colosseum, Forum, and Spanish Steps, followed by lunch in Trastevere and afternoon exploration.',
+                        description: '',
                         image: 'images/rome_trevi.png',
                         detailId: 'rome-ancient-city',
                         details: [
@@ -50,7 +51,7 @@
                 activities: [
                     {
                         title: 'Transfer to Pompeii',
-                        description: 'Private driver (~2.5 hrs) to <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a> for a guided family tour and authentic pizza lunch.',
+                        description: '',
                         image: 'images/rome_pompeii.png',
                         detailId: 'rome-pompeii',
                         details: [
@@ -69,7 +70,7 @@
                 activities: [
                     {
                         title: 'Vatican Museum and Villa Borghese',
-                        description: 'Visit the Sistine Chapel and St. Peter\'s Basilica, followed by a relaxing afternoon in Villa Borghese Gardens.',
+                        description: '',
                         image: 'images/rome_vatican.png',
                         detailId: 'rome-vatican-borghese',
                         details: [
@@ -98,7 +99,7 @@
                 activities: [
                     {
                         title: 'Arrival & Ponte Vecchio',
-                        description: 'Fast train to Florence, check-in at Hotel Villa Neroli, and an evening walk to Ponte Vecchio followed by dinner.',
+                        description: '',
                         image: 'images/florence_hero.png',
                         detailId: 'florence-arrival',
                         details: [
@@ -117,7 +118,7 @@
                 activities: [
                     {
                         title: 'Gelato & City Views',
-                        description: 'Family Gelato Making Class followed by exploring the Duomo and sunset at Piazzale Michelangelo.',
+                        description: '',
                         image: 'images/florence_duomo.png',
                         detailId: 'florence-gelato',
                         details: [
@@ -135,7 +136,7 @@
                 activities: [
                     {
                         title: 'Tuscany Balloon Ride',
-                        description: 'Early morning Hot Air Balloon ride over Tuscany followed by relaxation at Boboli Gardens.',
+                        description: '',
                         image: 'images/florence_tuscany.jpg',
                         detailId: 'florence-balloon',
                         details: [
@@ -152,7 +153,7 @@
                 activities: [
                     {
                         title: 'Day Trip to Modena',
-                        description: 'Train to Modena to visit the Ferrari Museum and enjoy a traditional lunch.',
+                        description: '',
                         image: 'images/florence_ferrari.png',
                         detailId: 'florence-modena',
                         details: [
@@ -180,7 +181,7 @@
                 activities: [
                     {
                         title: 'Arrival & Seaside Views',
-                        description: 'Train to La Spezia and transfer to Monterosso. Check-in at Hotel Porto Roca and enjoy beach time and seafood dinner.',
+                        description: '',
                         image: 'images/cinque_terre_hero.png',
                         detailId: 'cinque-arrival',
                         details: [
@@ -200,7 +201,7 @@
                 activities: [
                     {
                         title: 'Boat Tour & Villages',
-                        description: 'Private boat tour to see the 5 villages from the sea, followed by lunch in Vernazza and exploration.',
+                        description: '',
                         image: 'images/cinque_boat.png',
                         detailId: 'cinque-boat',
                         details: [
@@ -218,7 +219,7 @@
                 activities: [
                     {
                         title: 'Hiking & Pesto',
-                        description: 'Morning hike on the Blue Trail followed by an authentic Pesto making class and sunset aperitivo.',
+                        description: '',
                         image: 'images/cinque_hiking.png',
                         detailId: 'cinque-hiking',
                         details: [
@@ -245,7 +246,7 @@
                 activities: [
                     {
                         title: 'Arrival & Grand Canal',
-                        description: 'Train to Venice, private water taxi to Hilton Molino Stucky, and an evening gondola ride.',
+                        description: '',
                         image: 'images/venice_hero.png',
                         detailId: 'venice-arrival',
                         details: [
@@ -264,7 +265,7 @@
                 activities: [
                     {
                         title: 'Islands & Glass',
-                        description: 'Half-day boat tour to Murano and Burano islands, followed by a seafood lunch.',
+                        description: '',
                         image: 'images/venice_murano.png',
                         detailId: 'venice-islands',
                         details: [
@@ -282,7 +283,7 @@
                 activities: [
                     {
                         title: 'St. Mark\'s & Farewell',
-                        description: 'Skip-the-line tour of St. Mark\'s Basilica and Doge\'s Palace, mask workshop, and farewell dinner.',
+                        description: '',
                         image: 'images/venice_stmarks.png',
                         detailId: 'venice-marks',
                         details: [
@@ -300,7 +301,7 @@
                 activities: [
                     {
                         title: 'Departure',
-                        description: 'Final Italian breakfast and water taxi transfer to Marco Polo Airport.',
+                        description: '',
                         image: 'images/activity_transport.png',
                         detailId: 'venice-departure',
                         details: [
@@ -311,6 +312,49 @@
                     }
                 ]
             }
+        ]
+    }
+];
+
+const languageData = [
+    {
+        category: 'Greetings',
+        phrases: [
+            { italian: 'Ciao', english: 'Hello / Goodbye (Informal)' },
+            { italian: 'Buongiorno', english: 'Good morning' },
+            { italian: 'Buonasera', english: 'Good evening' },
+            { italian: 'Arrivederci', english: 'Goodbye (Formal)' },
+            { italian: 'Piacere', english: 'Nice to meet you' }
+        ]
+    },
+    {
+        category: 'Essentials',
+        phrases: [
+            { italian: 'Per favore', english: 'Please' },
+            { italian: 'Grazie', english: 'Thank you' },
+            { italian: 'Prego', english: 'You\'re welcome' },
+            { italian: 'Scusi', english: 'Excuse me (Formal)' },
+            { italian: 'Parla inglese?', english: 'Do you speak English?' }
+        ]
+    },
+    {
+        category: 'Dining',
+        phrases: [
+            { italian: 'Il conto, per favore', english: 'The check, please' },
+            { italian: 'Acqua naturale', english: 'Still water' },
+            { italian: 'Acqua frizzante', english: 'Sparkling water' },
+            { italian: 'Vino rosso / bianco', english: 'Red / White wine' },
+            { italian: 'È delizioso!', english: 'It is delicious!' }
+        ]
+    },
+    {
+        category: 'Emergency',
+        phrases: [
+            { italian: 'Aiuto!', english: 'Help!' },
+            { italian: 'Dov\'è il bagno?', english: 'Where is the bathroom?' },
+            { italian: 'Mi sono perso', english: 'I am lost' },
+            { italian: 'Ospedale', english: 'Hospital' },
+            { italian: 'Farmacia', english: 'Pharmacy' }
         ]
     }
 ];
