@@ -5,7 +5,7 @@ const app = document.getElementById('app');
 function renderHome() {
   app.innerHTML = `
     <div class="persistent-header">
-      <span>Italy Trip</span>
+      <span onclick="navigateTo('map')" style="cursor: pointer;">Italia</span>
       <div style="display: flex; gap: 20px;">
         <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer;">Lingua Italiana</span>
         <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
@@ -16,6 +16,31 @@ function renderHome() {
       <div class="hero-content">
         <h1 class="hero-title">Summer 2025 European Vacation</h1>
         <p class="hero-subtitle">Benvenuti in Italia</p>
+        <div class="countdown-container">
+          <div class="countdown-label">Countdown to Adventure</div>
+          <div id="countdown" class="countdown">
+            <div class="countdown-item">
+              <span class="countdown-value" id="months">--</span>
+              <span class="countdown-unit">Months</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="days">--</span>
+              <span class="countdown-unit">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="hours">--</span>
+              <span class="countdown-unit">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="minutes">--</span>
+              <span class="countdown-unit">Minutes</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="seconds">--</span>
+              <span class="countdown-unit">Seconds</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="scroll-indicator">
         <span>Explore</span>
@@ -51,6 +76,8 @@ function renderHome() {
   initAnimations();
   // Initialize button state
   setTimeout(updateHomeNavButtons, 100);
+  // Start countdown timer
+  startCountdown();
 }
 
 window.scrollHomeCarousel = function (direction) {
@@ -88,113 +115,50 @@ window.updateHomeNavButtons = function () {
 };
 
 function renderLocation(locationId) {
-  const location = tripData.find(l => l.id === locationId);
-  if (!location) {
+  const locationData = tripData.find(l => l.id === locationId);
+  if (!locationData) {
     navigateTo('');
     return;
   }
 
+  const itineraryHtml = locationData.itinerary.map(day => `
+    <div class="day-group">
+      ${day.activities.map(activity => `
+        <div class="activity-card reveal" ${activity.detailId ? `onclick="navigateTo('activity/${activity.detailId}')" style="cursor: pointer;"` : ''}>
+          <div class="activity-image" style="background-image: url('${activity.image || locationData.imageName}')"></div>
+          <div class="activity-overlay">
+            <div class="card-header">
+              <span class="day-badge">Day ${day.dayNumber}</span>
+              ${activity.time ? `<span class="activity-time">${activity.time}</span>` : ''}
+            </div>
+            <div class="card-content">
+              <h3 class="activity-title">${activity.title}</h3>
+              <p class="activity-description">${activity.description}</p>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('')" style="cursor: pointer;">← ${location.name}</span>
+      <span onclick="navigateTo('map')" style="cursor: pointer;">Italia</span>
       <div style="display: flex; gap: 20px;">
         <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer;">Lingua Italiana</span>
         <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
       </div>
     </div>
-    <div class="hero">
-      <div class="hero-bg" style="background-image: url('${location.imageName}')"></div>
+    <div class="hero location-hero">
+      <div class="hero-bg" style="background-image: url('${locationData.imageName}')"></div>
       <div class="hero-content">
-        <h1 class="hero-title">${location.name}</h1>
-        <p class="hero-subtitle">${location.dates}</p>
+        <h1 class="hero-title">${locationData.name}</h1>
+        <p class="hero-subtitle">${locationData.dates}</p>
+        <p class="hero-description">${locationData.description}</p>
       </div>
     </div>
-    <div class="container">
-      <p class="location-desc reveal">
-        ${location.description}
-      </p>
-      
-      <div class="itinerary">
-        ${location.itinerary.map((day, index) => `
-          <div class="day-section reveal" style="transition-delay: ${index * 100}ms">
-            <div class="day-header" onclick="toggleDay(this)">
-              <div class="day-info">
-                <span class="day-number">Day ${day.dayNumber}</span>
-                <span class="day-title">${day.title}</span>
-              </div>
-              <span class="day-date">${day.date}</span>
-              <span class="day-toggle">▼</span>
-            </div>
-            
-            <div class="day-content">
-              <div class="activities-list">
-                ${day.activities.map((activity, idx) => `
-                  <div class="activity-row">
-                    <div class="activity-timeline">
-                      <div class="timeline-dot"></div>
-                      ${idx < day.activities.length - 1 ? '<div class="timeline-line"></div>' : ''}
-                    </div>
-                    <div class="activity-content">
-                      <div class="activity-header">
-                        <span class="activity-title">${activity.title}</span>
-                        ${activity.time ? `<span class="activity-time">${activity.time}</span>` : ''}
-                      </div>
-                      <p class="activity-desc">${activity.description}</p>
-                    </div>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          </div>
-        `).join('')}
-      </div>
-    </div>
-  `;
-
-  initAnimations();
-  // Open the first day by default
-  setTimeout(() => {
-    const firstDay = document.querySelector('.day-section');
-    if (firstDay) toggleDay(firstDay.querySelector('.day-header'));
-  }, 500);
-}
-
-// --- Logic ---
-
-function renderLinguaItaliana() {
-  app.innerHTML = `
-    <div class="persistent-header">
-      <span onclick="navigateTo('')" style="cursor: pointer;">← Back</span>
-      <div style="display: flex; gap: 20px;">
-        <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer; font-weight: 700;">Lingua Italiana</span>
-        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
-      </div>
-    </div>
-    <div class="hero" style="min-height: 400px;">
-      <div class="hero-bg" style="background-image: url('images/italy_hero.png')"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">${phrasesData.title}</h1>
-        <p class="hero-subtitle">Essential Phrases</p>
-      </div>
-    </div>
-    <div class="container" style="position: relative;">
-      <button class="carousel-nav-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
-      <div class="phrase-carousel">
-        ${phrasesData.sections.map((section, index) => `
-          <div class="phrase-card reveal" style="transition-delay: ${index * 100}ms">
-            <h3 class="phrase-section-title">${section.name}</h3>
-            <div class="phrase-list">
-              ${section.phrases.map(phrase => `
-                <div class="phrase-item">
-                  <span class="phrase-italian">${phrase.italian}</span>
-                  <span class="phrase-english">${phrase.english}</span>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        `).join('')}
-      </div>
-      <button class="carousel-nav-btn next" onclick="scrollCarousel(1)">&#10095;</button>
+    <div class="container itinerary-container">
+      ${itineraryHtml}
     </div>
   `;
 
@@ -209,6 +173,88 @@ window.scrollCarousel = function (direction) {
   }
 };
 
+// Map Page
+function renderMap() {
+  app.innerHTML = `
+    <div class="persistent-header">
+      <span onclick="navigateTo('map')" style="cursor: pointer; font-weight: 700;">Italia</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" style="cursor: pointer;">Lingua Italiana</span>
+        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+      </div>
+    </div>
+    <div class="hero" style="min-height: 400px;">
+      <div class="hero-bg" style="background-image: url('images/italy_hero.png')"></div>
+      <div class="hero-content">
+        <h1 class="hero-title" style="font-size: 5rem;">Our Italian Journey</h1>
+        <p class="hero-subtitle">June 11-25, 2026</p>
+      </div>
+    </div>
+    <div class="map-page-container">
+      <div class="container">
+        <div class="italy-map-wrapper">
+          <img src="images/italy_map.png" alt="Map of Italy" class="italy-map-bg">
+          <svg class="italy-map-overlay" viewBox="0 0 800 1000">
+            <!-- Route path connecting cities in travel order: Rome -> Florence -> Cinque Terre -> Venice -->
+            <path d="M 390 510 L 340 390 L 230 330 L 425 260" 
+                  class="route-path" fill="none" stroke="#D62828" stroke-width="4" stroke-dasharray="8,8" opacity="0.8">
+              <animate attributeName="stroke-dashoffset" from="0" to="32" dur="2s" repeatCount="indefinite"/>
+            </path>
+            
+            <!-- City markers with accurate Italy positions based on reference map -->
+            <!-- Rome - Just south and east of Florence (red star position) -->
+            <g class="city-marker" data-city="rome" onclick="navigateTo('rome')">
+              <circle cx="390" cy="510" r="20" class="marker-circle"/>
+              <circle cx="390" cy="510" r="10" fill="white"/>
+              <text x="390" y="555" class="city-label-map">Rome</text>
+              <text x="390" y="575" class="city-dates-map">June 11-15</text>
+            </g>
+            
+            <!-- Florence - Tuscany, North-Central -->
+            <g class="city-marker" data-city="florence" onclick="navigateTo('florence')">
+              <circle cx="340" cy="390" r="20" class="marker-circle"/>
+              <circle cx="340" cy="390" r="10" fill="white"/>
+              <text x="340" y="430" class="city-label-map">Florence</text>
+              <text x="340" y="450" class="city-dates-map">June 15-19</text>
+            </g>
+            
+            <!-- Cinque Terre - Northwest Coast on Ligurian Sea -->
+            <g class="city-marker" data-city="cinque-terre" onclick="navigateTo('cinque-terre')">
+              <circle cx="230" cy="330" r="20" class="marker-circle"/>
+              <circle cx="230" cy="330" r="10" fill="white"/>
+              <text x="230" y="310" class="city-label-map">Cinque Terre</text>
+              <text x="230" y="292" class="city-dates-map">June 19-22</text>
+            </g>
+            
+            <!-- Venice - Northeast (black star position) -->
+            <g class="city-marker" data-city="venice" onclick="navigateTo('venice')">
+              <circle cx="425" cy="260" r="20" class="marker-circle"/>
+              <circle cx="425" cy="260" r="10" fill="white"/>
+              <text x="425" y="245" class="city-label-map">Venice</text>
+              <text x="425" y="227" class="city-dates-map">June 22-25</text>
+            </g>
+          </svg>
+        </div>
+        <div class="map-legend reveal">
+          <h3 style="margin-bottom: 20px; color: var(--color-secondary);">Your Journey</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 20px; height: 20px; border-radius: 50%; background: var(--color-primary); border: 2px solid white;"></div>
+              <span>City Destinations - Click to explore</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 40px; height: 3px; background: var(--color-primary); opacity: 0.8;"></div>
+              <span>Travel Route</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  initAnimations();
+}
+
 function navigateTo(route) {
   window.location.hash = route;
   window.scrollTo(0, 0);
@@ -218,11 +264,76 @@ function handleRoute() {
   const hash = window.location.hash.substring(1);
   if (hash === 'lingua-italiana') {
     renderLinguaItaliana();
+  } else if (hash === 'map') {
+    renderMap();
+  } else if (hash.startsWith('activity/')) {
+    const detailId = hash.split('/')[1];
+    renderActivityDetail(detailId);
   } else if (hash) {
     renderLocation(hash);
   } else {
     renderHome();
   }
+}
+
+function renderActivityDetail(detailId) {
+  // Find the activity across all locations
+  let foundActivity = null;
+  let foundLocation = null;
+
+  for (const loc of tripData) {
+    for (const day of loc.itinerary) {
+      const act = day.activities.find(a => a.detailId === detailId);
+      if (act) {
+        foundActivity = act;
+        foundLocation = loc;
+        break;
+      }
+    }
+    if (foundActivity) break;
+  }
+
+  if (!foundActivity) {
+    navigateTo('');
+    return;
+  }
+
+  app.innerHTML = `
+    <div class="persistent-header">
+      <span onclick="navigateTo('map')" style="cursor: pointer;">Italia</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('${foundLocation.id}')" style="cursor: pointer;">Back to ${foundLocation.name}</span>
+        <span onclick="navigateTo('')" style="cursor: pointer;">Home</span>
+      </div>
+    </div>
+    <div class="hero" style="min-height: 50vh;">
+      <div class="hero-bg" style="background-image: url('${foundActivity.image}')"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">${foundActivity.title}</h1>
+      </div>
+    </div>
+    <div class="container" style="padding-top: 40px; max-width: 800px;">
+      <div class="detail-content reveal">
+        <p style="font-size: 1.5rem; line-height: 1.6; margin-bottom: 30px;">${foundActivity.description}</p>
+        
+        <div style="padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          <h3 style="margin-bottom: 15px; color: var(--color-primary);">Activity Details</h3>
+          ${foundActivity.details ? `
+            <div class="detail-list">
+              ${foundActivity.details.map(detail => `
+                <div class="detail-item" style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
+                  <h4 style="margin: 0 0 5px 0; color: #333;">${detail.title} ${detail.time ? `<span style="font-weight: normal; font-size: 0.9em; color: #666;">(${detail.time})</span>` : ''}</h4>
+                  <p style="margin: 0; color: #555;">${detail.description}</p>
+                </div>
+              `).join('')}
+            </div>
+          ` : '<p>More detailed information about this activity will appear here.</p>'}
+        </div>
+      </div>
+    </div>
+  `;
+
+  initAnimations();
 }
 
 // Accordion Toggle
@@ -271,6 +382,73 @@ function initAnimations() {
       }
     });
   }
+}
+
+// Countdown Timer
+function startCountdown() {
+  const targetDate = new Date('June 11, 2026 00:00:00');
+
+  function updateCountdown() {
+    const now = new Date();
+    const currentTimestamp = now.getTime();
+    const targetTimestamp = targetDate.getTime();
+    const distance = targetTimestamp - currentTimestamp;
+
+    if (distance < 0) {
+      document.getElementById('months').textContent = '00';
+      document.getElementById('days').textContent = '00';
+      document.getElementById('hours').textContent = '00';
+      document.getElementById('minutes').textContent = '00';
+      document.getElementById('seconds').textContent = '00';
+      return;
+    }
+
+    // Calculate Months
+    let months = (targetDate.getFullYear() - now.getFullYear()) * 12;
+    months -= now.getMonth();
+    months += targetDate.getMonth();
+
+    // Adjust if current day is after target day
+    if (now.getDate() > targetDate.getDate()) {
+      months--;
+    }
+
+    // Calculate remaining time after removing full months
+    // Create a date object representing "now + months"
+    // We need to be careful with day overflow (e.g. Jan 31 + 1 month = Feb 28/29)
+    // But for a simple countdown, adding months to the current date is usually safe enough 
+    // if we just want "remaining days".
+
+    // Better approach for "remaining days":
+    // 1. Take the target date.
+    // 2. Subtract 'months' from it to get a "last month boundary" date? 
+    // No, easier: Take 'now', add 'months', and see the difference to target.
+
+    let tempDate = new Date(now);
+    tempDate.setMonth(tempDate.getMonth() + months);
+
+    // If adding months pushed us past the target (due to day length differences), 
+    // it shouldn't happen if we did the check above correctly.
+
+    let remainingDist = targetTimestamp - tempDate.getTime();
+
+    // Handle potential negative remainingDist due to daylight savings or month length quirks
+    if (remainingDist < 0) remainingDist = 0;
+
+    const days = Math.floor(remainingDist / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingDist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingDist % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingDist % (1000 * 60)) / 1000);
+
+    document.getElementById('months').textContent = String(months).padStart(2, '0');
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 }
 
 // Init
