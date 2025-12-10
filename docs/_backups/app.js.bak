@@ -9,19 +9,10 @@ let currentCarouselIndex = 0;
 function renderHome() {
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('')" class="header-nav-link home-link">Home</span>
-      
-      <!-- Hamburger Icon -->
-      <div class="hamburger-btn" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-
-      <!-- Dropdown Menu Overlay -->
-      <div id="nav-menu" class="nav-overlay">
-         <span onclick="navigateTo('lingua-italiana'); toggleMenu()" class="nav-overlay-link">Lingua Italiana</span>
-         <span onclick="navigateTo('map'); toggleMenu()" class="nav-overlay-link">La mappa</span>
+      <span onclick="navigateTo('')" class="header-nav-link">Home</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" class="header-nav-link">Lingua Italiana</span>
+        <span onclick="navigateTo('map')" class="header-nav-link">La mappa</span>
       </div>
     </div>
     <div class="hero home-hero">
@@ -144,12 +135,6 @@ window.initSwipe = function () {
   }, { passive: true });
 };
 
-// Toggle Menu Function
-window.toggleMenu = function () {
-  const menu = document.getElementById('nav-menu');
-  menu.classList.toggle('active');
-};
-
 function handleSwipe() {
   const threshold = 50; // Min diff to trigger
   if (touchEndX < touchStartX - threshold) {
@@ -181,19 +166,10 @@ function renderLocation(locationId) {
 
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('')" class="header-nav-link home-link">Home</span>
-      
-      <!-- Hamburger Icon -->
-      <div class="hamburger-btn" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-
-      <!-- Dropdown Menu Overlay -->
-      <div id="nav-menu" class="nav-overlay">
-         <span onclick="navigateTo('lingua-italiana'); toggleMenu()" class="nav-overlay-link">Lingua Italiana</span>
-         <span onclick="navigateTo('map'); toggleMenu()" class="nav-overlay-link">La mappa</span>
+      <span onclick="navigateTo('')" class="header-nav-link">Home</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" class="header-nav-link">Lingua Italiana</span>
+        <span onclick="navigateTo('map')" class="header-nav-link">La mappa</span>
       </div>
     </div>
     <div class="hero location-hero">
@@ -373,19 +349,10 @@ window.scrollCarousel = function (direction) {
 function renderMap() {
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('')" class="header-nav-link home-link">Home</span>
-      
-      <!-- Hamburger Icon -->
-      <div class="hamburger-btn" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-
-      <!-- Dropdown Menu Overlay -->
-      <div id="nav-menu" class="nav-overlay">
-         <span onclick="navigateTo('lingua-italiana'); toggleMenu()" class="nav-overlay-link">Lingua Italiana</span>
-         <span onclick="navigateTo('map'); toggleMenu()" class="nav-overlay-link">La mappa</span>
+      <span onclick="navigateTo('')" class="header-nav-link">Home</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" class="header-nav-link">Lingua Italiana</span>
+        <span onclick="navigateTo('map')" class="header-nav-link active-link">La mappa</span>
       </div>
     </div>
     <div class="hero">
@@ -476,19 +443,10 @@ function handleRoute() {
 function renderLanguage() {
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('')" class="header-nav-link home-link">Home</span>
-      
-      <!-- Hamburger Icon -->
-      <div class="hamburger-btn" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-
-      <!-- Dropdown Menu Overlay -->
-      <div id="nav-menu" class="nav-overlay">
-         <span onclick="navigateTo('lingua-italiana'); toggleMenu()" class="nav-overlay-link">Lingua Italiana</span>
-         <span onclick="navigateTo('map'); toggleMenu()" class="nav-overlay-link">La mappa</span>
+      <span onclick="navigateTo('')" class="header-nav-link">Home</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('lingua-italiana')" class="header-nav-link active-link">Lingua Italiana</span>
+        <span onclick="navigateTo('map')" class="header-nav-link">La mappa</span>
       </div>
     </div>
     <div class="hero">
@@ -550,19 +508,10 @@ function renderActivityDetail(detailId) {
 
   app.innerHTML = `
     <div class="persistent-header">
-      <span onclick="navigateTo('')" class="header-nav-link home-link">Home</span>
-      
-      <!-- Hamburger Icon -->
-      <div class="hamburger-btn" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-
-      <!-- Dropdown Menu Overlay -->
-      <div id="nav-menu" class="nav-overlay">
-         <span onclick="navigateTo('lingua-italiana'); toggleMenu()" class="nav-overlay-link">Lingua Italiana</span>
-         <span onclick="navigateTo('map'); toggleMenu()" class="nav-overlay-link">La mappa</span>
+      <span onclick="navigateTo('')" class="header-nav-link">Home</span>
+      <div style="display: flex; gap: 20px;">
+        <span onclick="navigateTo('${foundLocation.id}')" class="header-nav-link">Back to ${foundLocation.name}</span>
+        <span onclick="navigateTo('map')" class="header-nav-link">La mappa</span>
       </div>
     </div>
     <div class="hero">
