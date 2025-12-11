@@ -209,7 +209,7 @@ function renderLocation(locationId) {
         <div class="day-carousel-wrapper">
           <!-- Day Cards Injected Here -->
           ${currentLocationItinerary.map((day, index) => `
-            <div class="location-card" id="day-card-${index}" onclick="handleDayClick(${index})">
+            <div class="location-card" id="day-card-${index}" onclick="handleDayClick(${index}, event)">
               <div class="card-image-wrapper">
                 <img src="${day.activities[0]?.image || locationData.imageName}" alt="${day.title}" class="card-image">
               </div>
@@ -254,9 +254,65 @@ function renderLocation(locationId) {
   initAnimations();
   initDaySwipe();
 
+  // Inject Overlay Container if not present
+  if (!document.getElementById('itinerary-overlay-container')) {
+    const overlayHTML = `
+      <div id="itinerary-overlay-container" class="itinerary-overlay-container" onclick="closeItineraryOverlay(event)">
+        <div class="itinerary-modal-card">
+            <!-- Content injected via JS -->
+        </div>
+      </div>
+      `;
+    document.body.insertAdjacentHTML('beforeend', overlayHTML);
+  }
+
   // Initialize View
   updateDayCarouselView();
 }
+
+// --- Overlay Logic ---
+
+window.openItineraryOverlay = function (index) {
+  const day = currentLocationItinerary[index];
+  const overlay = document.getElementById('itinerary-overlay-container');
+  const modalCard = overlay.querySelector('.itinerary-modal-card');
+
+  if (!day || !overlay) return;
+
+  // Build Content
+  const timelineHTML = (day.activities.flatMap(act => act.details || [])).map(detail => `
+      <div class="timeline-item">
+          <div class="timeline-time">
+              <span>${detail.time || 'General'}</span>
+          </div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+              <h3 class="timeline-title">${detail.title}</h3>
+              <p class="timeline-desc">${detail.description}</p>
+          </div>
+      </div>
+  `).join('');
+
+  modalCard.innerHTML = `
+    <img src="${day.activities[0]?.image || 'images/italy_hero.png'}" alt="${day.title}" class="modal-header-image">
+    <div class="modal-content-body">
+        <h2 class="modal-title">Day ${day.dayNumber}: ${day.title}</h2>
+        <p class="modal-date">${day.date}</p>
+        <div class="itinerary-timeline">
+            ${timelineHTML || '<p>Relax and enjoy!</p>'}
+        </div>
+    </div>
+  `;
+
+  // Show
+  overlay.classList.add('active');
+};
+
+window.closeItineraryOverlay = function (e) {
+  if (e) e.stopPropagation(); // Safe check
+  const overlay = document.getElementById('itinerary-overlay-container');
+  if (overlay) overlay.classList.remove('active');
+};
 
 let dayTouchStartX = 0;
 let dayTouchEndX = 0;
@@ -285,35 +341,25 @@ window.handleDaySwipe = function () {
   }
 };
 
-window.handleDayClick = function (index) {
-  if (index === currentDayIndex) {
-    // Toggle expansion
-    toggleDayExpansion();
-  } else {
-    // Switch card, reset expansion
-    currentDayIndex = index;
-    isDayExpanded = false;
-    updateDayCarouselView();
-  }
+window.handleDayClick = function (index, event) {
+  // Simple: Just open the overlay
+  openItineraryOverlay(index);
 };
 
 window.nextDayCard = function (e) {
   if (e) e.stopPropagation();
   currentDayIndex = (currentDayIndex + 1) % currentLocationItinerary.length;
-  isDayExpanded = false;
   updateDayCarouselView();
 };
 
 window.prevDayCard = function (e) {
   if (e) e.stopPropagation();
   currentDayIndex = (currentDayIndex - 1 + currentLocationItinerary.length) % currentLocationItinerary.length;
-  isDayExpanded = false;
   updateDayCarouselView();
 };
 
 window.toggleDayExpansion = function () {
-  isDayExpanded = !isDayExpanded;
-  updateDayCarouselView();
+  // No longer used
 };
 
 window.updateDayCarouselView = function () {
@@ -322,38 +368,28 @@ window.updateDayCarouselView = function () {
   const heroText = document.getElementById('hero-text-content');
   const navBtns = document.querySelectorAll('.day-carousel-section .carousel-nav-btn');
 
-  // Toggle Hero Text Visibility
+  // Ensure Hero Text is visible (resetting old logic)
   if (heroText) {
-    heroText.style.opacity = isDayExpanded ? '0' : '1';
-    heroText.style.pointerEvents = isDayExpanded ? 'none' : 'auto';
-    heroText.style.transition = 'opacity 0.3s ease';
+    heroText.style.opacity = '1';
+    heroText.style.pointerEvents = 'auto';
   }
 
-  // Toggle Nav Button Visibility
-  navBtns.forEach(btn => btn.style.opacity = isDayExpanded ? '0' : '1');
-  navBtns.forEach(btn => btn.style.pointerEvents = isDayExpanded ? 'none' : 'auto');
+  // Ensure Nav Buttons are visible
+  navBtns.forEach(btn => btn.style.opacity = '1');
+  navBtns.forEach(btn => btn.style.pointerEvents = 'auto');
 
   cards.forEach((card, i) => {
     // Reset base classes
     card.className = 'location-card';
-    card.style.opacity = ''; // Reset inline opacity
+    card.style.opacity = '';
 
-    if (isDayExpanded) {
-      // EXPANDED MODE
-      if (i === currentDayIndex) {
-        card.classList.add('active', 'expanded');
-      } else {
-        card.classList.add('hidden-peer'); // New class to hide others
-      }
-    } else {
-      // CAROUSEL MODE
-      if (i === currentDayIndex) {
-        card.classList.add('active');
-      } else if (i === (currentDayIndex - 1 + total) % total) {
-        card.classList.add('prev');
-      } else if (i === (currentDayIndex + 1) % total) {
-        card.classList.add('next');
-      }
+    // CAROUSEL MODE ONLY
+    if (i === currentDayIndex) {
+      card.classList.add('active');
+    } else if (i === (currentDayIndex - 1 + total) % total) {
+      card.classList.add('prev');
+    } else if (i === (currentDayIndex + 1) % total) {
+      card.classList.add('next');
     }
   });
 };
