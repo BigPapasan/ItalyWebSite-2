@@ -294,6 +294,7 @@ window.openItineraryOverlay = function (index) {
   `).join('');
 
   modalCard.innerHTML = `
+    <button class="modal-close-btn">×</button>
     <img src="${day.activities[0]?.image || 'images/italy_hero.png'}" alt="${day.title}" class="modal-header-image">
     <div class="modal-content-body">
         <h2 class="modal-title">Day ${day.dayNumber}: ${day.title}</h2>
