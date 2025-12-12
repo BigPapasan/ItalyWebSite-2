@@ -287,7 +287,9 @@ window.openItineraryOverlay = function (index) {
           </div>
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-              <h3 class="timeline-title">${detail.title}</h3>
+              ${detail.link
+      ? `<h3 class="timeline-title"><a href="${detail.link}" target="_blank" rel="noopener noreferrer" class="timeline-link">${detail.title}</a></h3>`
+      : `<h3 class="timeline-title">${detail.title}</h3>`}
               <p class="timeline-desc">${detail.description}</p>
           </div>
       </div>

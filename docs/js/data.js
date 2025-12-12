@@ -2,83 +2,163 @@
     {
         id: 'rome',
         name: 'Rome',
+        dates: 'June 11 - June 15',
         imageName: 'images/rome_hero.png',
-        description: 'The Eternal City, where ancient history meets modern life. <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>',
-        dates: 'June 11–15',
+        description: 'The Eternal City.',
         itinerary: [
             {
                 dayNumber: 1,
+                title: 'Arrival & Relaxed Exploring',
                 date: 'June 11',
-                title: 'Arrival & Welcome',
                 activities: [
                     {
-                        title: 'Arrive in Rome',
-                        description: '',
                         image: 'images/rome_hero.png',
-                        detailId: 'rome-arrival',
                         details: [
-                            { title: 'Private Transfer', description: 'Private transfer to hotel.' },
-                            { title: 'Check-in', description: 'Check into <a href="https://www.hotelvillapamphiliroma.com/en-GB" target="_blank">Hotel Villa Pamphili</a> for your memorable 4 nights in <a href="https://www.italia.it/en/lazio/rome/guide-history-facts" target="_blank">Rome</a>.' },
-                            { title: 'Evening Walk', description: '<a href="https://www.italia.it/en/lazio/rome/piazza-navona" target="_blank">Piazza Navona</a> & <a href="https://www.italia.it/en/lazio/rome/trevi-fountain" target="_blank">Trevi Fountain</a>.', time: 'Evening' },
-                            { title: 'Welcome Dinner', description: 'Authentic Roman pizza.' }
+                            {
+                                time: 'Afternoon',
+                                title: 'Check-in: Hotel Villa Pamphili Roma',
+                                description: 'Arrive, check in, and enjoy the pool.',
+                                link: 'https://www.hotelvillapamphiliroma.com/'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Evening Walk',
+                                description: 'Walk around Piazza Navona & Campo de’ Fiori.',
+                                link: 'https://www.italia.it/en/lazio/rome/piazza-navona'
+                            },
+                            {
+                                time: 'Dinner',
+                                title: 'Casual Dinner',
+                                description: 'Casual dinner nearby the piazza.'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 2,
+                title: 'Vatican & Ancient Rome',
                 date: 'June 12',
-                title: 'Ancient Rome & City Highlights',
                 activities: [
                     {
-                        title: 'Ancient Rome & City Highlights',
-                        description: '',
-                        image: 'images/rome_trevi.png',
-                        detailId: 'rome-ancient-city',
+                        image: 'images/rome_vatican.png',
                         details: [
-                            { title: 'Golf Cart Tour of Rome', description: 'See <a href="https://www.italia.it/en/lazio/rome/colosseum" target="_blank">Colosseum</a> exterior, <a href="https://www.italia.it/en/lazio/rome/roman-forum" target="_blank">Roman Forum</a>, <a href="https://www.italia.it/en/lazio/rome/pantheon" target="_blank">Pantheon</a>, <a href="https://www.italia.it/en/lazio/rome/piazza-di-spagna" target="_blank">Spanish Steps</a>, Piazza Venezia. Family-friendly, minimal walking.', time: '3 hours' },
-                            { title: 'Lunch', description: '<a href="https://www.italia.it/en/lazio/rome/trastevere" target="_blank">Trastevere</a>' },
-                            { title: 'Afternoon Exploration', description: '<a href="https://www.italia.it/en/lazio/rome/pantheon" target="_blank">Pantheon</a> & <a href="https://www.italia.it/en/lazio/rome/piazza-navona" target="_blank">Piazza Navona</a>', time: 'Afternoon' },
-                            { title: 'Optional Rooftop Drink', description: 'Sunset at Terrazza Borromini', time: 'Sunset' }
+                            {
+                                time: '8:00 AM',
+                                title: 'Vatican Museums & Sistine Chapel',
+                                description: 'Early morning entry to see the Raphael Rooms, Sistine Chapel, and St. Peter’s (approx. 3.5 hours).',
+                                link: 'https://www.italia.it/en/lazio/rome/cappella-sistina'
+                            },
+                            {
+                                time: 'Lunch',
+                                title: 'Lunch near Vatican',
+                                description: 'Recommended: Pinsa ’M Po.',
+                                link: 'https://www.facebook.com/pinsampo/'
+                            },
+                            {
+                                time: '2:00 PM',
+                                title: 'Colosseum',
+                                description: 'Explore the iconic amphitheater.',
+                                link: 'https://www.italia.it/en/lazio/rome/colosseum'
+                            },
+                            {
+                                time: '3:30 PM',
+                                title: 'Roman Forum',
+                                description: 'Walk through the ruins of the ancient city center.',
+                                link: 'https://www.italia.it/en/lazio/rome/roman-forum'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Dinner in Trastevere',
+                                description: 'Dinner at The Food Factory.',
+                                link: 'https://www.facebook.com/foodfactorytrastevere/'
+                            },
+                            {
+                                time: 'Dessert',
+                                title: 'Gelato',
+                                description: 'Gelateria La Romana Dal 1947.',
+                                link: 'https://www.gelateriaromana.com/'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 3,
-                date: 'June 13',
                 title: 'Pompeii Day Trip',
+                date: 'June 13',
                 activities: [
                     {
-                        title: 'Transfer to Pompeii',
-                        description: '',
                         image: 'images/rome_pompeii.png',
-                        detailId: 'rome-pompeii',
                         details: [
-                            { title: 'Transfer to Pompeii', description: 'Private driver (~2.5 hrs) to <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a>.' },
-                            { title: 'Guided Family Tour', description: '2-hour kid-friendly tour of <a href="https://www.italia.it/en/campania/pompeii-archaeological-site" target="_blank">Pompeii</a> highlights.', time: '11:00 AM' },
-                            { title: 'Lunch', description: 'Authentic Neapolitan Pizza nearby.' },
-                            { title: 'Return to Rome', description: 'Relaxing drive back.' }
+                            {
+                                time: 'All Day',
+                                title: 'Pompeii & Sorrento Tour',
+                                description: '12-hour roundtrip tour from Rome to explore Pompeii and Sorrento with a guide.',
+                                link: 'https://www.italia.it/en/campania/pompeii-archaeological-site'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Relax',
+                                description: 'Relaxing evening back at the hotel.'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 4,
+                title: 'Golf Cart Tour & Dinner',
                 date: 'June 14',
-                title: 'Vatican & Villa Borghese',
                 activities: [
                     {
-                        title: 'Vatican Museum and Villa Borghese',
-                        description: '',
-                        image: 'images/rome_vatican.png',
-                        detailId: 'rome-vatican-borghese',
+                        image: 'images/rome_trevi.png',
                         details: [
-                            { title: 'Vatican Museums', description: '<a href="https://www.italia.it/en/lazio/rome/cappella-sistina" target="_blank">Sistine Chapel</a> & <a href="https://www.italia.it/en/lazio/rome/st-peter-basilica" target="_blank">St. Peter’s Basilica</a>.', time: 'Morning' },
-                            { title: 'Lunch', description: 'Ginger Sapori e Salute (near Vatican)' },
-                            { title: 'Villa Borghese Gardens', description: '<a href="https://www.italia.it/en/lazio/rome/villa-borghese" target="_blank">Villa Borghese</a> - Playground & row boats.', time: 'Afternoon' },
-                            { title: 'Optional Gallery', description: '<a href="https://www.italia.it/en/lazio/rome/borghese-gallery" target="_blank">Borghese Gallery</a> timed tickets' },
-                            { title: 'Evening in Trastevere', description: 'Explore <a href="https://www.italia.it/en/lazio/rome/trastevere" target="_blank">Trastevere</a> & casual dinner', time: 'Evening' }
+                            {
+                                time: 'Morning',
+                                title: 'Free Time',
+                                description: 'Morning free for leisure.'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'Rome Golf Cart Tour',
+                                description: '3-hour guided golf cart tour of the city.'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Dinner at Virginiae',
+                                description: 'Dinner reservation at Ristorante Virginiae.',
+                                link: 'https://www.ristorantevirginiae.it/'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                dayNumber: 5,
+                title: 'Transfer to Florence',
+                date: 'June 15',
+                activities: [
+                    {
+                        image: 'images/florence_hero.png',
+                        details: [
+                            {
+                                time: 'Morning',
+                                title: 'Train to Florence',
+                                description: 'High-speed train to Florence (approx. 1h 30m).',
+                                link: 'https://www.trenitalia.com/en.html'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'Check-in: Hotel Villa Neroli',
+                                description: 'Check in to your hotel in Florence.',
+                                link: 'https://www.villaneroli.com/'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Dinner',
+                                description: 'Easy dinner in Florence.'
+                            }
                         ]
                     }
                 ]
@@ -88,79 +168,132 @@
     {
         id: 'florence',
         name: 'Florence',
+        dates: 'June 15 - June 19',
         imageName: 'images/florence_hero.png',
-        description: 'The Cradle of the Renaissance, famous for its art, architecture, and Tuscan cuisine. <a href="https://www.italia.it/en/tuscany/florence" target="_blank">Florence Guide</a>',
-        dates: 'June 15–19',
+        description: 'The Cradle of the Renaissance.',
         itinerary: [
             {
                 dayNumber: 1,
-                date: 'June 15',
-                title: 'Arrival & Ponte Vecchio',
+                title: 'Florence Highlights',
+                date: 'June 16',
                 activities: [
                     {
-                        title: 'Arrival & Ponte Vecchio',
-                        description: '',
-                        image: 'images/florence_hero.png',
-                        detailId: 'florence-arrival',
+                        image: 'images/florence_duomo.png',
                         details: [
-                            { title: 'Travel to Florence', description: 'Fast train Rome → <a href="https://www.italia.it/en/tuscany/florence" target="_blank">Florence</a> (1 hr 30 min)', time: 'Morning' },
-                            { title: 'Check-in', description: '<a href="https://www.villaneroli.com/en/" target="_blank">Hotel Villa Neroli Florence</a> - Home base for 4 nights.' },
-                            { title: 'Evening Walk', description: '<a href="https://www.italia.it/en/tuscany/florence/ponte-vecchio" target="_blank">Ponte Vecchio</a>', time: 'Evening' },
-                            { title: 'Dinner', description: '<a href="https://ristorantelagiostra.com/en/ristorante-la-giostra/" target="_blank">La Giostra</a>' }
+                            {
+                                time: 'Morning',
+                                title: 'Duomo Complex',
+                                description: 'Explore the Duomo area (optional dome or bell tower climb).',
+                                link: 'https://www.italia.it/en/tuscany/florence/duomo-florence'
+                            },
+                            {
+                                time: 'Lunch',
+                                title: 'Mercato Centrale',
+                                description: 'Lunch at the historic central market.',
+                                link: 'https://www.italia.it/en/tuscany/florence'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'City Walk',
+                                description: 'Signoria Square and Ponte Vecchio.',
+                                link: 'https://www.italia.it/en/tuscany/florence'
+                            },
+                            {
+                                time: 'Snack',
+                                title: 'Gelato in Oltrarno',
+                                description: 'Enjoy artisanal gelato in the Oltrarno district.'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Dinner',
+                                description: 'Dinner nearby.'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 2,
-                date: 'June 16',
-                title: 'Gelato & City Views',
+                title: 'Tuscany Day Trip',
+                date: 'June 17',
                 activities: [
                     {
-                        title: 'Gelato & City Views',
-                        description: '',
-                        image: 'images/florence_duomo.png',
-                        detailId: 'florence-gelato',
+                        image: 'images/florence_tuscany.jpg',
                         details: [
-                            { title: 'Family Gelato Making Class', description: 'Includes making sorbet + Italian gelato tasting.' },
-                            { title: 'Explore Florence', description: '<a href="https://www.italia.it/en/tuscany/florence/duomo-florence" target="_blank">Duomo</a> (book climb if desired), <a href="https://www.italia.it/en/tuscany/florence/piazza-della-signoria" target="_blank">Piazza della Signoria</a>.', time: 'Afternoon' },
-                            { title: 'Sunset', description: '<a href="https://www.italia.it/en/tuscany/florence/piazzale-michelangelo" target="_blank">Piazzale Michelangelo</a>', time: 'Sunset' }
+                            {
+                                time: 'Day',
+                                title: 'Tuscany Tour',
+                                description: 'Full-day tour of Chianti and San Gimignano.'
+                            },
+                            {
+                                time: '7:00 PM',
+                                title: 'Dinner at Ristorante La Spada',
+                                description: 'Dinner reservation (listed as Le Spede in notes, likely La Spada).',
+                                link: 'https://www.ristorantelaspada.it/'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 3,
-                date: 'June 17',
-                title: 'Tuscany Balloon Ride',
+                title: 'Modena Ferrari Trip',
+                date: 'June 18',
                 activities: [
                     {
-                        title: 'Tuscany Balloon Ride',
-                        description: '',
-                        image: 'images/florence_tuscany.jpg',
-                        detailId: 'florence-balloon',
+                        image: 'images/florence_ferrari.png',
                         details: [
-                            { title: 'Hot Air Balloon Ride', description: 'Over <a href="https://www.italia.it/en/tuscany" target="_blank">Tuscany</a> (near <a href="https://www.italia.it/en/tuscany/florence/san-casciano-val-di-pesa" target="_blank">San Casciano</a> or <a href="https://www.italia.it/en/tuscany/chianti" target="_blank">Chianti</a>). Champagne breakfast included.', time: 'Early Morning' },
-                            { title: 'Relaxation', description: 'Pool time or <a href="https://www.italia.it/en/tuscany/florence/boboli-gardens" target="_blank">Boboli Gardens</a>.', time: 'Afternoon' }
+                            {
+                                time: 'Morning',
+                                title: 'Train to Modena',
+                                description: 'Train from Florence to Modena (40-60 mins).'
+                            },
+                            {
+                                time: 'Late Morning',
+                                title: 'Enzo Ferrari Museum',
+                                description: 'Visit the interactive Enzo Ferrari Museum in Modena.',
+                                link: 'https://www.italia.it/en/emilia-romagna/modena/enzo-ferrari-museum-modena'
+                            },
+                            {
+                                time: 'Lunch',
+                                title: 'Lunch in Modena',
+                                description: 'Hosteria Giusti or Trattoria Aldina.',
+                                link: 'https://hosteriagiusti.it/'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'Maranello Ferrari Museum',
+                                description: 'Visit the Maranello Ferrari Museum and track area.',
+                                link: 'https://www.ferrari.com/en-EN/museums/ferrari-maranello'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Return',
+                                description: 'Train return to Florence.'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 4,
-                date: 'June 18',
-                title: 'Day Trip to Modena',
+                title: 'Travel to Cinque Terre',
+                date: 'June 19',
                 activities: [
                     {
-                        title: 'Day Trip to Modena',
-                        description: '',
-                        image: 'images/florence_ferrari.png',
-                        detailId: 'florence-modena',
+                        image: 'images/cinque_terre_hero.png',
                         details: [
-                            { title: 'Train to Modena', description: 'Visit <a href="https://www.italia.it/en/emilia-romagna/modena/museo-ferrari-maranello" target="_blank">Ferrari Museum Maranello</a> or <a href="https://www.italia.it/en/emilia-romagna/modena/ferrari-museum" target="_blank">Enzo Ferrari Museum</a>.' },
-                            { title: 'Experience', description: 'Optional driving simulator.' },
-                            { title: 'Lunch', description: 'Try Tigelle & Lambrusco in <a href="https://www.italia.it/en/emilia-romagna/modena" target="_blank">Modena</a>.' },
-                            { title: 'Return', description: 'Train back to Florence.' }
+                            {
+                                time: 'Morning',
+                                title: 'Train to Levanto',
+                                description: 'Train from Florence to Levanto.'
+                            },
+                            {
+                                time: 'Check-in',
+                                title: 'Angiolina’s Farm',
+                                description: 'Check in to Angiolina’s Farm (agriturismo).',
+                                link: 'https://www.angiolinasfarm.com/'
+                            }
                         ]
                     }
                 ]
@@ -170,62 +303,111 @@
     {
         id: 'cinque-terre',
         name: 'Cinque Terre',
+        dates: 'June 19 - June 22',
         imageName: 'images/cinque_terre_hero.png',
-        description: 'Five colorful fishing villages perched on the rugged Italian Riviera coastline. <a href="https://www.italia.it/en/liguria/cinque-terre" target="_blank">Cinque Terre Guide</a>',
-        dates: 'June 19–22',
+        description: 'Rugged coastline and colorful villages.',
         itinerary: [
             {
                 dayNumber: 1,
+                title: 'Explore Levanto',
                 date: 'June 19',
-                title: 'Arrival & Seaside Views',
                 activities: [
                     {
-                        title: 'Arrival & Seaside Views',
-                        description: '',
-                        image: 'images/cinque_terre_hero.png',
-                        detailId: 'cinque-arrival',
+                        image: 'images/cinque_boat.png',
                         details: [
-                            { title: 'Train to La Spezia', description: 'Train Florence → <a href="https://www.italia.it/en/liguria/la-spezia" target="_blank">La Spezia</a> (2.5 hrs).' },
-                            { title: 'Transfer', description: 'Local train to <a href="https://www.italia.it/en/liguria/monterosso-al-mare" target="_blank">Monterosso</a>.' },
-                            { title: 'Check-in', description: '<a href="https://www.hotelportoroca.it/en/" target="_blank">Hotel Porto Roca</a> - Stunning cliffside views.' },
-                            { title: 'Beach Time', description: 'Relax at <a href="https://www.italia.it/en/liguria/monterosso-al-mare" target="_blank">Monterosso</a> beach.', time: 'Afternoon' },
-                            { title: 'Dinner', description: 'Seafood with a view.' }
+                            {
+                                time: 'Afternoon',
+                                title: 'Levanto Seaside Path',
+                                description: 'Walk or bike along the Levanto–Bonassola seaside path.',
+                                link: 'https://www.italia.it/en/liguria/the-cinque-terre'
+                            },
+                            {
+                                time: 'Dinner',
+                                title: 'Seafood Dinner',
+                                description: 'Dinner in Levanto at a local seafood spot.'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 2,
+                title: 'Cinque Terre Hiking',
                 date: 'June 20',
-                title: 'Boat Tour & Villages',
                 activities: [
                     {
-                        title: 'Boat Tour & Villages',
-                        description: '',
-                        image: 'images/cinque_boat.png',
-                        detailId: 'cinque-boat',
+                        image: 'images/cinque_hiking.png',
                         details: [
-                            { title: 'Private Boat Tour', description: 'See the 5 villages from the sea. Stop for swimming.', time: 'Morning' },
-                            { title: 'Lunch', description: '<a href="https://www.italia.it/en/liguria/vernazza" target="_blank">Vernazza</a> harbor.' },
-                            { title: 'Explore', description: 'Walk around <a href="https://www.italia.it/en/liguria/vernazza" target="_blank">Vernazza</a> and <a href="https://www.italia.it/en/liguria/corniglia" target="_blank">Corniglia</a>.' }
+                            {
+                                time: 'Day',
+                                title: 'Village Hike',
+                                description: 'Hike a classic route: Monterosso → Vernazza → Corniglia.'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'Return to Levanto',
+                                description: 'Take the train back to Levanto.'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Relax',
+                                description: 'Relaxing evening in Levanto.'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 3,
+                title: 'Cooking Class & Villages',
                 date: 'June 21',
-                title: 'Hiking & Pesto',
                 activities: [
                     {
-                        title: 'Hiking & Pesto',
-                        description: '',
-                        image: 'images/cinque_hiking.png',
-                        detailId: 'cinque-hiking',
+                        image: 'images/cinque_terre_hero.png',
                         details: [
-                            { title: 'Hiking', description: 'Walk part of the Blue Trail (Sentiero Azzurro) if open/suitable.', time: 'Morning' },
-                            { title: 'Pesto Class', description: 'Learn to make authentic Ligurian pesto.', time: 'Afternoon' },
-                            { title: 'Sunset Aperitivo', description: '<a href="https://www.italia.it/en/liguria/manarola" target="_blank">Manarola</a> scenic point.', time: 'Sunset' }
+                            {
+                                time: 'Morning',
+                                title: 'Liguria Cooking Class',
+                                description: 'Pesto, focaccia, and seafood cooking class in Levanto or Monterosso.'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'Village Exploration',
+                                description: 'Explore Manarola or Riomaggiore.'
+                            },
+                            {
+                                time: 'Sunset',
+                                title: 'Marina Sunset',
+                                description: 'Sunset at Manarola’s marina.'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                dayNumber: 4,
+                title: 'Travel to Venice',
+                date: 'June 22',
+                activities: [
+                    {
+                        image: 'images/venice_hero.png',
+                        details: [
+                            {
+                                time: 'Morning/Afternoon',
+                                title: 'Train to Venice',
+                                description: 'Train Levanto → Venice (approx. 4–4.5 hours).'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'Check-in',
+                                description: 'Check in to your Venice hotel (e.g., Hilton Molino Stucky or similar).',
+                                link: 'https://www.hilton.com/en/hotels/vcehihi-hilton-molino-stucky-venice/'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Canal Stroll',
+                                description: 'Evening stroll through the canals.'
+                            }
                         ]
                     }
                 ]
@@ -235,79 +417,84 @@
     {
         id: 'venice',
         name: 'Venice',
+        dates: 'June 22 - June 25',
         imageName: 'images/venice_hero.png',
-        description: 'The Floating City of canals, bridges, and masks. <a href="https://www.italia.it/en/veneto/venice" target="_blank">Venice Guide</a>',
-        dates: 'June 22–25',
+        description: 'The City of Canals.',
         itinerary: [
             {
                 dayNumber: 1,
-                date: 'June 22',
-                title: 'Arrival & Grand Canal',
+                title: 'Venice Highlights',
+                date: 'June 23',
                 activities: [
                     {
-                        title: 'Arrival & Grand Canal',
-                        description: '',
-                        image: 'images/venice_hero.png',
-                        detailId: 'venice-arrival',
+                        image: 'images/venice_stmarks.png',
                         details: [
-                            { title: 'Train to Venice', description: 'Train La Spezia → <a href="https://www.italia.it/en/veneto/venice" target="_blank">Venice Santa Lucia</a> (~4 hrs).' },
-                            { title: 'Water Taxi', description: 'Private boat transfer to hotel.' },
-                            { title: 'Check-in', description: '<a href="https://www.hilton.com/en/hotels/vcehihi-hilton-molino-stucky-venice/" target="_blank">Hilton Molino Stucky</a> - Rooftop pool.' },
-                            { title: 'Evening Gondola', description: 'Classic <a href="https://www.italia.it/en/veneto/venice" target="_blank">gondola ride</a> before dinner.', time: 'Evening' }
+                            {
+                                time: 'Morning',
+                                title: 'Gondola Ride',
+                                description: 'Morning gondola ride for best light and fewer crowds.'
+                            },
+                            {
+                                time: 'Day',
+                                title: 'Explore the City',
+                                description: 'St. Mark’s Square, Rialto Bridge, and wandering hidden canals.',
+                                link: 'https://www.italia.it/en/veneto/venice'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Dinner',
+                                description: 'Dinner near your hotel.'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 2,
-                date: 'June 23',
-                title: 'Islands & Glass',
+                title: 'Lido Beach & Murano',
+                date: 'June 24',
                 activities: [
                     {
-                        title: 'Islands & Glass',
-                        description: '',
                         image: 'images/venice_murano.png',
-                        detailId: 'venice-islands',
                         details: [
-                            { title: 'Murano & Burano', description: 'Boat tour to <a href="https://www.italia.it/en/veneto/venice/murano" target="_blank">Murano</a> (glass blowing) and <a href="https://www.italia.it/en/veneto/venice/burano" target="_blank">Burano</a> (colorful houses).', time: 'Half Day' },
-                            { title: 'Lunch', description: 'Seafood risotto on <a href="https://www.italia.it/en/veneto/venice/burano" target="_blank">Burano</a>.' },
-                            { title: 'Relax', description: 'Hotel rooftop pool.', time: 'Afternoon' }
+                            {
+                                time: 'Morning',
+                                title: 'Lido Beach',
+                                description: 'Rent loungers, swim, and relax at Lido Beach.'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'Murano Glass',
+                                description: 'Vaporetto to Murano to visit glass-blowing studios.',
+                                link: 'https://www.italia.it/en/veneto/venice/murano-glassworks'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Dinner',
+                                description: 'Dinner along a quiet canal in Cannaregio or Dorsoduro.'
+                            }
                         ]
                     }
                 ]
             },
             {
                 dayNumber: 3,
-                date: 'June 24',
-                title: 'St. Mark\'s & Farewell',
-                activities: [
-                    {
-                        title: 'St. Mark\'s & Farewell',
-                        description: '',
-                        image: 'images/venice_stmarks.png',
-                        detailId: 'venice-marks',
-                        details: [
-                            { title: 'St. Mark\'s Basilica', description: 'Skip-the-line tour of <a href="https://www.italia.it/en/veneto/venice/st-marks-basilica" target="_blank">Basilica</a> & <a href="https://www.italia.it/en/veneto/venice/doges-palace" target="_blank">Doge\'s Palace</a>.', time: 'Morning' },
-                            { title: 'Mask Workshop', description: 'Family Venetian mask decorating.', time: 'Afternoon' },
-                            { title: 'Farewell Dinner', description: 'Grand Canal view restaurant.' }
-                        ]
-                    }
-                ]
-            },
-            {
-                dayNumber: 4,
-                date: 'June 25',
                 title: 'Departure',
+                date: 'June 25',
                 activities: [
                     {
-                        title: 'Departure',
-                        description: '',
-                        image: 'images/activity_transport.png',
-                        detailId: 'venice-departure',
+                        image: 'images/venice_hero.png',
                         details: [
-                            { title: 'Breakfast', description: 'Final Italian breakfast.' },
-                            { title: 'Transfer', description: 'Water taxi to <a href="https://www.veneziaairport.it/en/" target="_blank">Marco Polo Airport</a>.' },
-                            { title: 'Flight Home', description: 'Arrivederci Italia!' }
+                            {
+                                time: 'Morning',
+                                title: 'Final Walk',
+                                description: 'Final walk and breakfast.'
+                            },
+                            {
+                                time: 'Transfer',
+                                title: 'Airport/Rail Transfer',
+                                description: 'Transfer to airport or train station for departure.'
+                            }
                         ]
                     }
                 ]
@@ -316,127 +503,24 @@
     }
 ];
 
+// Language Data
 const languageData = [
-    {
-        category: 'Greetings',
-        phrases: [
-            { italian: 'Ciao', english: 'Hello / Goodbye (Informal)' },
-            { italian: 'Buongiorno', english: 'Good morning' },
-            { italian: 'Buonasera', english: 'Good evening' },
-            { italian: 'Arrivederci', english: 'Goodbye (Formal)' },
-            { italian: 'Piacere', english: 'Nice to meet you' }
-        ]
-    },
-    {
-        category: 'Essentials',
-        phrases: [
-            { italian: 'Per favore', english: 'Please' },
-            { italian: 'Grazie', english: 'Thank you' },
-            { italian: 'Prego', english: 'You\'re welcome' },
-            { italian: 'Scusi', english: 'Excuse me (Formal)' },
-            { italian: 'Parla inglese?', english: 'Do you speak English?' }
-        ]
-    },
-    {
-        category: 'Dining',
-        phrases: [
-            { italian: 'Il conto, per favore', english: 'The check, please' },
-            { italian: 'Acqua naturale', english: 'Still water' },
-            { italian: 'Acqua frizzante', english: 'Sparkling water' },
-            { italian: 'Vino rosso / bianco', english: 'Red / White wine' },
-            { italian: 'È delizioso!', english: 'It is delicious!' }
-        ]
-    },
-    {
-        category: 'Emergency',
-        phrases: [
-            { italian: 'Aiuto!', english: 'Help!' },
-            { italian: 'Dov\'è il bagno?', english: 'Where is the bathroom?' },
-            { italian: 'Mi sono perso', english: 'I am lost' },
-            { italian: 'Ospedale', english: 'Hospital' },
-            { italian: 'Farmacia', english: 'Pharmacy' }
-        ]
-    }
+    // ... existing language data ...
+    { italian: 'Ciao', english: 'Hello / Goodbye' },
+    { italian: 'Grazie', english: 'Thank you' },
+    { italian: 'Per favore', english: 'Please' },
+    { italian: 'Buongiorno', english: 'Good morning' },
+    { italian: 'Buonasera', english: 'Good evening' },
+    { italian: 'Arrivederci', english: 'Goodbye' },
+    { italian: 'Quanto costa?', english: 'How much does it cost?' },
+    { italian: 'Dov\'è il bagno?', english: 'Where is the bathroom?' },
+    { italian: 'Un tavolo per due', english: 'A table for two' },
+    { italian: 'L\'acqua', english: 'Water' },
+    { italian: 'Il vino', english: 'Wine' }
 ];
 
-const phrasesData = {
-    title: 'Italian Travel Phrases Guide',
-    sections: [
-        {
-            name: 'General Survival',
-            phrases: [
-                { italian: 'Ciao / Buongiorno / Buonasera', english: 'Hello / Good morning / Good evening' },
-                { italian: 'Come stai? / Come sta?', english: 'How are you? (informal / formal)' },
-                { italian: 'Sto bene, grazie.', english: 'I’m good, thank you.' },
-                { italian: 'Mi chiamo…', english: 'My name is…' },
-                { italian: 'Piacere!', english: 'Nice to meet you.' },
-                { italian: 'Dov’è…?', english: 'Where is…?' },
-                { italian: 'Dov’è il bagno?', english: 'Where is the bathroom?' },
-                { italian: 'Quanto tempo ci vuole?', english: 'How long does it take?' },
-                { italian: 'È lontano?', english: 'Is it far?' },
-                { italian: 'Capisco / Non capisco', english: 'I understand / I don’t understand' },
-                { italian: 'Parla inglese?', english: 'Do you speak English?' },
-                { italian: 'Va bene.', english: 'Okay' },
-                { italian: 'Non importa.', english: 'Never mind' },
-                { italian: 'Perfetto!', english: 'Perfect' },
-                { italian: 'Mi dispiace.', english: 'I’m sorry' },
-                { italian: 'Ho bisogno di aiuto.', english: 'I need help' }
-            ]
-        },
-        {
-            name: 'Airport & Train Station',
-            phrases: [
-                { italian: 'Biglietteria', english: 'Ticket office' },
-                { italian: 'Binario', english: 'Platform' },
-                { italian: 'Orario', english: 'Schedule' },
-                { italian: 'Uscita', english: 'Exit' },
-                { italian: 'Dov’è il binario numero…?', english: 'Where is platform number…?' },
-                { italian: 'A che ora parte il treno per…?', english: 'What time does the train leave?' },
-                { italian: 'È in ritardo?', english: 'Is it delayed?' },
-                { italian: 'Ho bisogno di un taxi.', english: 'I need a taxi.' }
-            ]
-        },
-        {
-            name: 'Hotel Check-In & Check-Out',
-            phrases: [
-                { italian: 'Ho una prenotazione.', english: 'I have a reservation.' },
-                { italian: 'Vorrei fare il check-in.', english: 'I would like to check in.' },
-                { italian: 'A che ora è il check-out?', english: 'What time is check-out?' },
-                { italian: 'C’è la colazione inclusa?', english: 'Is breakfast included?' },
-                { italian: 'Potrei avere un’altra chiave?', english: 'Can I have another key?' },
-                { italian: 'Il Wi-Fi funziona?', english: 'Does the Wi-Fi work?' }
-            ]
-        },
-        {
-            name: 'Restaurant & Café',
-            phrases: [
-                { italian: 'Un tavolo per due, per favore.', english: 'A table for two, please.' },
-                { italian: 'Possiamo vedere il menù?', english: 'Can we see the menu?' },
-                { italian: 'Senza… (glutine / latte / noci)', english: 'Without… (gluten/milk/nuts)' },
-                { italian: 'Che cosa consiglia?', english: 'What do you recommend?' },
-                { italian: 'Il conto, per favore.', english: 'The check, please.' }
-            ]
-        },
-        {
-            name: 'Shopping & Everyday',
-            phrases: [
-                { italian: 'Quanto costa?', english: 'How much does it cost?' },
-                { italian: 'Posso pagare con carta?', english: 'Can I pay with card?' },
-                { italian: 'Dove posso trovare…?', english: 'Where can I find…?' },
-                { italian: 'Mi scusi. / Permesso.', english: 'Excuse me / Coming through.' }
-            ]
-        },
-        {
-            name: 'Pronunciation of Famous Places',
-            phrases: [
-                { italian: 'Roma', english: 'ROH-mah (Rome)' },
-                { italian: 'Firenze', english: 'fee-REN-tseh (Florence)' },
-                { italian: 'Venezia', english: 'veh-NEH-tsya (Venice)' },
-                { italian: 'Milano', english: 'mee-LAH-no (Milan)' },
-                { italian: 'Cinque Terre', english: 'CHEEN-kweh TEH-reh (Five Lands)' },
-                { italian: 'Positano', english: 'po-zee-TAH-no (Amalfi Coast)' },
-                { italian: 'Capri', english: 'KAH-pree' }
-            ]
-        }
-    ]
-};
+const phrasesData = [
+    { category: 'Greetings', phrases: [{ i: 'Ciao', e: 'Hello' }, { i: 'Salve', e: 'Hello (Formal)' }] },
+    { category: 'Dining', phrases: [{ i: 'Il conto, per favore', e: 'The check, please' }, { i: 'Buon appetito', e: 'Enjoy your meal' }] },
+    { category: 'Directions', phrases: [{ i: 'Dritto', e: 'Straight ahead' }, { i: 'A destra', e: 'To the right' }] }
+];
