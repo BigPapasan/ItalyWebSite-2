@@ -27,6 +27,12 @@
                                 link: 'https://www.italia.it/en/lazio/rome/piazza-navona'
                             },
                             {
+                                time: 'Evening',
+                                title: '1000 Miglia Car Race',
+                                description: 'Watch the historic car race.',
+                                link: 'https://1000miglia.it/en/events/1000-miglia/1000-miglia-2026/'
+                            },
+                            {
                                 time: 'Dinner',
                                 title: 'Casual Dinner',
                                 description: 'Casual dinner nearby the piazza.'
@@ -44,10 +50,10 @@
                         image: 'images/rome_vatican.png',
                         details: [
                             {
-                                time: '8:00 AM',
-                                title: 'Vatican Museums & Sistine Chapel',
-                                description: 'Early morning entry to see the Raphael Rooms, Sistine Chapel, and St. Peter’s (approx. 3.5 hours).',
-                                link: 'https://www.italia.it/en/lazio/rome/cappella-sistina'
+                                time: '10:00 AM',
+                                title: 'Rome Golf Cart Tour',
+                                description: 'VIP Ride to Trevi, Pantheon, Navona and More.',
+                                link: 'https://www.viator.com/tours/Rome/Rome-by-Golf-Cart-VIP-Ride-to-Trevi-Pantheon-Navona-and-More/d511-15932P132'
                             },
                             {
                                 time: 'Lunch',
@@ -56,16 +62,10 @@
                                 link: 'https://www.facebook.com/pinsampo/'
                             },
                             {
-                                time: '2:00 PM',
-                                title: 'Colosseum',
-                                description: 'Explore the iconic amphitheater.',
-                                link: 'https://www.italia.it/en/lazio/rome/colosseum'
-                            },
-                            {
-                                time: '3:30 PM',
-                                title: 'Roman Forum',
-                                description: 'Walk through the ruins of the ancient city center.',
-                                link: 'https://www.italia.it/en/lazio/rome/roman-forum'
+                                time: '3:00 PM',
+                                title: 'Vatican Museums & Sistine Chapel',
+                                description: 'Entry to see the Raphael Rooms, Sistine Chapel, and St. Peter’s (approx. 3.5 hours).',
+                                link: 'https://www.italia.it/en/lazio/rome/cappella-sistina'
                             },
                             {
                                 time: 'Evening',
@@ -85,17 +85,23 @@
             },
             {
                 dayNumber: 3,
-                title: 'Pompeii Day Trip',
+                title: 'Pompeii and Amalfi Coast',
                 date: 'June 13',
                 activities: [
                     {
                         image: 'images/rome_pompeii.png',
                         details: [
                             {
-                                time: 'All Day',
-                                title: 'Pompeii & Sorrento Tour',
-                                description: '12-hour roundtrip tour from Rome to explore Pompeii and Sorrento with a guide.',
+                                time: 'Morning',
+                                title: 'Piazza de Popolo for Pompeii Departure',
+                                description: 'Travel to the archaeological site.',
                                 link: 'https://www.italia.it/en/campania/pompeii-archaeological-site'
+                            },
+                            {
+                                time: 'All Day',
+                                title: 'Tour Pompeii and Amalfi Coast',
+                                description: '12-hour roundtrip tour from Rome to explore Pompeii and the Amalfi Coast.',
+                                link: 'https://www.viator.com/tours/Rome/Pompeii-Amalfi-Coast-and-Positano-Guided-Small-Group-Day-Trip-from-Rome/d511-3731P159'
                             },
                             {
                                 time: 'Evening',
@@ -108,7 +114,7 @@
             },
             {
                 dayNumber: 4,
-                title: 'Golf Cart Tour & Dinner',
+                title: 'Colosseum Tour & Dinner',
                 date: 'June 14',
                 activities: [
                     {
@@ -116,15 +122,22 @@
                         details: [
                             {
                                 time: 'Morning',
-                                title: 'Free Time',
-                                description: 'Morning free for leisure.'
+                                title: 'Walking Tour',
+                                description: 'Prepare for the Colosseum tour.',
+                                link: 'https://theromanguy.com/tours/italy/rome/complete-colosseum-tour?itemlistname=the%20best%20colosseum%20tours%20in%20rome&itemlistid=22&index=6'
                             },
                             {
-                                time: 'Afternoon',
-                                title: 'Rome Golf Cart Tour',
-                                description: '3-hour guided golf cart tour of the city.'
+                                time: '11:00 AM',
+                                title: 'Colosseum',
+                                description: 'Explore the iconic amphitheater.',
+                                link: 'https://www.italia.it/en/lazio/rome/colosseum'
                             },
                             {
+                                time: '12:00 PM',
+                                title: 'Roman Forum',
+                                description: 'Walk through the ruins of the ancient city center.',
+                                link: 'https://www.italia.it/en/lazio/rome/roman-forum'
+                            }, {
                                 time: 'Evening',
                                 title: 'Dinner at Virginiae',
                                 description: 'Dinner reservation at Ristorante Virginiae.',
@@ -175,28 +188,28 @@
             {
                 dayNumber: 1,
                 title: 'Florence Highlights',
-                date: 'June 16',
+                date: 'June 15',
                 activities: [
                     {
                         image: 'images/florence_duomo.png',
                         details: [
                             {
-                                time: 'Morning',
-                                title: 'Duomo Complex',
-                                description: 'Explore the Duomo area (optional dome or bell tower climb).',
-                                link: 'https://www.italia.it/en/tuscany/florence/duomo-florence'
+                                time: 'Late Morning',
+                                title: 'Arrive from Rome',
+                                description: 'Arrive via high speed train from Rome.',
+                                link: 'https://www.trenitalia.com/en.html'
                             },
                             {
-                                time: 'Lunch',
-                                title: 'Mercato Centrale',
-                                description: 'Lunch at the historic central market.',
-                                link: 'https://www.italia.it/en/tuscany/florence'
+                                time: 'Late Morning',
+                                title: 'Check-in: Hotel Villa Neroli',
+                                description: 'Check into your hotel.',
+                                link: 'https://www.villaneroli.com/en/'
                             },
                             {
                                 time: 'Afternoon',
-                                title: 'City Walk',
-                                description: 'Signoria Square and Ponte Vecchio.',
-                                link: 'https://www.italia.it/en/tuscany/florence'
+                                title: 'Duomo Complex',
+                                description: 'Explore the Duomo area (optional dome or bell tower climb).',
+                                link: 'https://www.italia.it/en/tuscany/florence/duomo-florence'
                             },
                             {
                                 time: 'Snack',
@@ -214,22 +227,28 @@
             },
             {
                 dayNumber: 2,
-                title: 'Tuscany Day Trip',
-                date: 'June 17',
+                title: 'Tuscany Tour and Pisa',
+                date: 'June 16',
                 activities: [
                     {
                         image: 'images/florence_tuscany.jpg',
                         details: [
                             {
-                                time: 'Day',
-                                title: 'Tuscany Tour',
-                                description: 'Full-day tour of Chianti and San Gimignano.'
+                                time: 'All Day',
+                                title: 'Tuscany Tour and Pisa',
+                                description: 'San Gimignano, Pisa, and Lunch at a Winery.',
+                                link: 'https://www.viator.com/tours/Florence/Tuscany-Day-Trip-from-Florence-Siena-San-Gimignano-Pisa-and-Lunch-at-a-Winery/d519-5070TUSCANY'
                             },
                             {
-                                time: '7:00 PM',
-                                title: 'Dinner at Ristorante La Spada',
-                                description: 'Dinner reservation (listed as Le Spede in notes, likely La Spada).',
-                                link: 'https://www.ristorantelaspada.it/'
+                                time: 'Lunch',
+                                title: 'Lunch at Fattoria Poggio Alloro',
+                                description: 'Lunch at a winery with a view of San Gimignano.',
+                                link: 'https://fattoriapoggioalloro.com/'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Dinner in Florence',
+                                description: 'Dinner back in Florence after the tour.'
                             }
                         ]
                     }
@@ -237,6 +256,36 @@
             },
             {
                 dayNumber: 3,
+                title: 'Explore Florence',
+                date: 'June 17',
+                activities: [
+                    {
+                        image: 'images/florence_hero.png',
+                        details: [
+                            {
+                                time: 'Lunch',
+                                title: 'Mercato Centrale',
+                                description: 'Lunch at the historic central market.',
+                                link: 'https://www.italia.it/en/tuscany/florence'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'City Walk',
+                                description: 'Signoria Square and Ponte Vecchio.',
+                                link: 'https://www.italia.it/en/tuscany/florence'
+                            },
+                            {
+                                time: '7:00 PM',
+                                title: 'Dinner at Ristorante la Spada',
+                                description: 'Traditional Tuscan cuisine.',
+                                link: 'https://www.ristorantelaspada.it/en-gb'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                dayNumber: 4,
                 title: 'Modena Ferrari Trip',
                 date: 'June 18',
                 activities: [
@@ -256,9 +305,9 @@
                             },
                             {
                                 time: 'Lunch',
-                                title: 'Lunch in Modena',
-                                description: 'Hosteria Giusti or Trattoria Aldina.',
-                                link: 'https://hosteriagiusti.it/'
+                                title: 'Mercato Albinelli',
+                                description: 'Lunch at the historic covered market.',
+                                link: 'https://www.visitmodena.it/en/discover-modena/land-of-flavors/places-of-taste/albinelli-covered-market'
                             },
                             {
                                 time: 'Afternoon',
@@ -276,7 +325,7 @@
                 ]
             },
             {
-                dayNumber: 4,
+                dayNumber: 5,
                 title: 'Travel to Cinque Terre',
                 date: 'June 19',
                 activities: [
@@ -316,6 +365,12 @@
                         image: 'images/cinque_boat.png',
                         details: [
                             {
+                                time: 'Morning',
+                                title: 'Arrive from Florence to Levanto',
+                                description: 'Gateway to Cinque Terre.',
+                                link: 'https://www.italia.it/en/liguria/levanto'
+                            },
+                            {
                                 time: 'Afternoon',
                                 title: 'Levanto Seaside Path',
                                 description: 'Walk or bike along the Levanto–Bonassola seaside path.',
@@ -340,8 +395,9 @@
                         details: [
                             {
                                 time: 'Day',
-                                title: 'Village Hike',
-                                description: 'Hike a classic route: Monterosso → Vernazza → Corniglia.'
+                                title: 'Cinque Terre Hike',
+                                description: 'Hike a classic route: Monterosso → Vernazza → Corniglia.',
+                                link: 'https://www.italia.it/en/liguria/cinque-terre'
                             },
                             {
                                 time: 'Afternoon',
@@ -359,7 +415,7 @@
             },
             {
                 dayNumber: 3,
-                title: 'Cooking Class & Villages',
+                title: 'Explore Cinque Terre by Train',
                 date: 'June 21',
                 activities: [
                     {
@@ -367,18 +423,14 @@
                         details: [
                             {
                                 time: 'Morning',
-                                title: 'Liguria Cooking Class',
-                                description: 'Pesto, focaccia, and seafood cooking class in Levanto or Monterosso.'
-                            },
-                            {
-                                time: 'Afternoon',
                                 title: 'Village Exploration',
                                 description: 'Explore Manarola or Riomaggiore.'
                             },
                             {
                                 time: 'Sunset',
                                 title: 'Marina Sunset',
-                                description: 'Sunset at Manarola’s marina.'
+                                description: 'Sunset at Manarola’s marina.',
+                                link: 'https://www.italia.it/en/liguria/la-spezia/manarola'
                             }
                         ]
                     }
@@ -396,17 +448,6 @@
                                 time: 'Morning/Afternoon',
                                 title: 'Train to Venice',
                                 description: 'Train Levanto → Venice (approx. 4–4.5 hours).'
-                            },
-                            {
-                                time: 'Afternoon',
-                                title: 'Check-in',
-                                description: 'Check in to your Venice hotel (e.g., Hilton Molino Stucky or similar).',
-                                link: 'https://www.hilton.com/en/hotels/vcehihi-hilton-molino-stucky-venice/'
-                            },
-                            {
-                                time: 'Evening',
-                                title: 'Canal Stroll',
-                                description: 'Evening stroll through the canals.'
                             }
                         ]
                     }
@@ -423,17 +464,36 @@
         itinerary: [
             {
                 dayNumber: 1,
+                title: 'Arrival in Venice',
+                date: 'June 22',
+                activities: [
+                    {
+                        image: 'images/venice_hero.png',
+                        details: [
+                            {
+                                time: 'Afternoon',
+                                title: 'Casin dei Spiriti',
+                                description: 'Check in to Casin dei Spiriti.',
+                                link: 'https://www.casindeispiriti.com/'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Canal Stroll',
+                                description: 'Evening stroll through the canals.',
+                                link: 'https://www.italia.it/en/veneto/venice'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                dayNumber: 2,
                 title: 'Venice Highlights',
                 date: 'June 23',
                 activities: [
                     {
                         image: 'images/venice_stmarks.png',
                         details: [
-                            {
-                                time: 'Morning',
-                                title: 'Gondola Ride',
-                                description: 'Morning gondola ride for best light and fewer crowds.'
-                            },
                             {
                                 time: 'Day',
                                 title: 'Explore the City',
@@ -442,15 +502,21 @@
                             },
                             {
                                 time: 'Evening',
-                                title: 'Dinner',
-                                description: 'Dinner near your hotel.'
+                                title: 'Gondola Ride',
+                                description: 'Evening gondola ride for best light and fewer crowds.'
+                            },
+                            {
+                                time: 'Evening',
+                                title: 'Dinner near San Marco',
+                                description: 'Dinner near your hotel.',
+                                link: 'https://www.italia.it/en/veneto/venice/sestiere-san-marco'
                             }
                         ]
                     }
                 ]
             },
             {
-                dayNumber: 2,
+                dayNumber: 3,
                 title: 'Lido Beach & Murano',
                 date: 'June 24',
                 activities: [
@@ -459,14 +525,14 @@
                         details: [
                             {
                                 time: 'Morning',
-                                title: 'Lido Beach',
-                                description: 'Rent loungers, swim, and relax at Lido Beach.'
-                            },
-                            {
-                                time: 'Afternoon',
                                 title: 'Murano Glass',
                                 description: 'Vaporetto to Murano to visit glass-blowing studios.',
                                 link: 'https://www.italia.it/en/veneto/venice/murano-glassworks'
+                            },
+                            {
+                                time: 'Afternoon',
+                                title: 'Lido Beach',
+                                description: 'Rent loungers, swim, and relax at Lido Beach.'
                             },
                             {
                                 time: 'Evening',
@@ -478,7 +544,7 @@
                 ]
             },
             {
-                dayNumber: 3,
+                dayNumber: 4,
                 title: 'Departure',
                 date: 'June 25',
                 activities: [
